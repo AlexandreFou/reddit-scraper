@@ -231,6 +231,12 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         f"(Base URL: {target_base or 'OpenAI Default'})"
     )
 
+    key_prefix = config.LLM_API_KEY[:4] if config.LLM_API_KEY else "VIDE"
+    logger.info(
+        f"[DIAGNOSTIC LLM] Cible effective: {target_base or 'https://api.openai.com/v1'} "
+        f"| Modèle: {target_model} | Préfixe de clé: '{key_prefix}'"
+    )
+
     llm_kwargs = {
         "model": target_model,
         "api_key": config.LLM_API_KEY,
