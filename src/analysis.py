@@ -263,6 +263,29 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         return result
 
     except Exception as exc:
+        err_str = str(exc).lower()
+        is_groq = "groq.com" in (config.LLM_BASE_URL or "")
+        fallback_model = "llama-3.1-8b-instant" if is_groq else "gpt-4o-mini"
+
+        if ("model_not_found" in err_str or "does not exist" in err_str) and config.LLM_MODEL != fallback_model:
+            logger.warning(
+                f"[WARNING] Le modèle '{config.LLM_MODEL}' n'existe pas ou n'est pas accessible (404). "
+                f"Tentative automatique de repli sur '{fallback_model}'..."
+            )
+            try:
+                fallback_kwargs = dict(llm_kwargs)
+                fallback_kwargs["model"] = fallback_model
+                fallback_llm = ChatOpenAI(**fallback_kwargs).with_structured_output(OpportunityAnalysisOutput)
+                fallback_chain = prompt_template | fallback_llm
+                res = fallback_chain.invoke({"posts_content": posts_content})
+                logger.info(
+                    f"[INFO] Analyse réussie avec le modèle de repli '{fallback_model}' : "
+                    f"{len(res.opportunities)} opportunités extraites !"
+                )
+                return res
+            except Exception as fb_exc:
+                logger.warning(f"[WARNING] Le repli sur '{fallback_model}' a échoué: {fb_exc}")
+
         logger.error(
             f"[ERROR] Échec lors de l'appel LLM: {exc}\n"
             f"Modèle testé : LLM_MODEL='{config.LLM_MODEL}', Base URL='{config.LLM_BASE_URL}'"

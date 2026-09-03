@@ -36,10 +36,21 @@ class Config:
     # Nombre max d'éléments à récupérer par subreddit dans le run unique
     POSTS_PER_SUBREDDIT: int = int(os.getenv("POSTS_PER_SUBREDDIT", "30"))
     
-    # --- LLM / OmniRoute / OpenAI / Gemini Settings ---
-    LLM_API_KEY: str = os.getenv("LLM_API_KEY", "").strip()
-    LLM_BASE_URL: str = os.getenv("LLM_BASE_URL", "").strip()
-    LLM_MODEL: str = os.getenv("LLM_MODEL", "").strip() or "gpt-4o-mini"
+    # --- LLM / Groq / OmniRoute / OpenAI Settings ---
+    LLM_API_KEY: str = os.getenv("LLM_API_KEY", "").strip().strip("'\"")
+    
+    raw_base_url = os.getenv("LLM_BASE_URL", "").strip().strip("'\"")
+    if raw_base_url.endswith("/chat/completions"):
+        raw_base_url = raw_base_url[:-len("/chat/completions")].rstrip("/")
+    LLM_BASE_URL: str = raw_base_url.rstrip("/")
+    
+    raw_model = os.getenv("LLM_MODEL", "").strip().strip("'\"")
+    if not raw_model or raw_model == "gpt-4o-mini":
+        if "groq.com" in LLM_BASE_URL:
+            raw_model = "llama-3.3-70b-versatile"
+        else:
+            raw_model = "gpt-4o-mini"
+    LLM_MODEL: str = raw_model
     
     # --- Filtering & Pipeline Limits ---
     MAX_POSTS_FOR_LLM: int = int(os.getenv("MAX_POSTS_FOR_LLM", "30"))

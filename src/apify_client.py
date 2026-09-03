@@ -173,7 +173,12 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
         if isinstance(run, dict):
             dataset_id = run.get("defaultDatasetId") or run.get("default_dataset_id")
         else:
-            dataset_id = getattr(run, "default_dataset_id", None) or getattr(run, "defaultDatasetId", None)
+            dataset_id = (
+                getattr(run, "default_dataset_id", None)
+                or getattr(run, "defaultDatasetId", None)
+                or (getattr(run, "__dict__", {}) or {}).get("default_dataset_id")
+                or (getattr(run, "__dict__", {}) or {}).get("defaultDatasetId")
+            )
         logger.info(f"[INFO] Run Apify terminé avec succès. Dataset ID: {dataset_id}")
 
         items = list(client.dataset(dataset_id).iterate_items())
