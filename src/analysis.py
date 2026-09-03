@@ -232,9 +232,67 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
     )
 
     key_prefix = config.LLM_API_KEY[:4] if config.LLM_API_KEY else "VIDE"
+    
+    # Auto-inspection des modèles disponibles via l'API
+    available_models = []
+    if config.LLM_API_KEY:
+        try:
+            import urllib.request
+            import json
+            models_endpoint = f"{target_base}/models" if target_base else "https://api.openai.com/v1/models"
+            req = urllib.request.Request(
+                models_endpoint,
+                headers={"Authorization": f"Bearer {config.LLM_API_KEY}"}
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                resp_json = json.loads(resp.read().decode())
+                available_models = [m.get("id") for m in resp_json.get("data", []) if m.get("id")]
+                logger.info(
+                    f"[DIAGNOSTIC GROQ/LLM] Modèles disponibles pour votre clé ({len(available_models)}) : "
+                    f"{available_models[:15]}"
+                )
+        except Exception as e:
+            logger.warning(f"[DIAGNOSTIC GROQ/LLM] Impossible de lister les modèles via {target_base}/models: {e}")
+
+    # Si le modèle demandé n'existe pas dans la liste des modèles accessibles, sélectionner le meilleur modèle disponible
+    if available_models and target_model not in available_models:
+        logger.warning(
+            f"[ATTENTION] Le modèle '{target_model}' n'est pas dans la liste des modèles autorisés sur votre compte !"
+        )
+        # Priorités de sélection pour Groq
+        candidates = [
+            "llama-3.3-70b-versatile",
+            "llama-3.1-8b-instant",
+            "meta-llama/llama-4-scout-17b-16e-instruct",
+            "meta-llama/llama-4-maverick-17b-128e-instruct",
+            "qwen/qwen3.6-27b",
+            "openai/gpt-oss-120b",
+            "gemma2-9b-it",
+            "mixtral-8x7b-32768",
+        ]
+        chosen = None
+        for cand in candidates:
+            if cand in available_models:
+                chosen = cand
+                break
+        
+        if not chosen:
+            # Chercher un modèle contenant 'llama' ou '70b' ou '8b'
+            for m in available_models:
+                if any(k in m.lower() for k in ["llama", "70b", "8b", "versatile", "instant"]):
+                    chosen = m
+                    break
+
+        if not chosen and available_models:
+            chosen = available_models[0]
+
+        if chosen:
+            logger.info(f"[AUTO-CORRECTION] Remplacement automatique par le modèle disponible : '{chosen}'")
+            target_model = chosen
+
     logger.info(
-        f"[DIAGNOSTIC LLM] Cible effective: {target_base or 'https://api.openai.com/v1'} "
-        f"| Modèle: {target_model} | Préfixe de clé: '{key_prefix}'"
+        f"[INFO] Initialisation finale du modèle LLM : '{target_model}' "
+        f"(Base URL: {target_base or 'OpenAI Default'}, Clé: {key_prefix}***)"
     )
 
     llm_kwargs = {
@@ -293,30 +351,40 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
     except Exception as exc:
         err_str = str(exc).lower()
         is_groq = "groq.com" in target_base or config.LLM_API_KEY.startswith("gsk_")
-        fallback_model = "llama-3.1-8b-instant" if is_groq else "gpt-4o-mini"
         if is_groq and not target_base:
             target_base = "https://api.groq.com/openai/v1"
 
-        if ("model_not_found" in err_str or "does not exist" in err_str) and target_model != fallback_model:
-            logger.warning(
-                f"[WARNING] Le modèle '{target_model}' n'existe pas ou n'est pas accessible (404). "
-                f"Tentative automatique de repli sur '{fallback_model}'..."
+        # Liste de replis potentiels
+        candidates_to_try = [m for m in available_models if m != target_model]
+        if not candidates_to_try:
+            candidates_to_try = (
+                ["llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768", "qwen/qwen3.6-27b"]
+                if is_groq
+                else ["gpt-4o-mini"]
             )
-            try:
-                fallback_kwargs = dict(llm_kwargs)
-                fallback_kwargs["model"] = fallback_model
-                if target_base:
-                    fallback_kwargs["base_url"] = target_base
-                fallback_llm = ChatOpenAI(**fallback_kwargs).with_structured_output(OpportunityAnalysisOutput)
-                fallback_chain = prompt_template | fallback_llm
-                res = fallback_chain.invoke({"posts_content": posts_content})
-                logger.info(
-                    f"[INFO] Analyse réussie avec le modèle de repli '{fallback_model}' : "
-                    f"{len(res.opportunities)} opportunités extraites !"
+
+        if "model_not_found" in err_str or "does not exist" in err_str:
+            for fallback_model in candidates_to_try[:4]:
+                if fallback_model == target_model:
+                    continue
+                logger.warning(
+                    f"[WARNING] Tentative automatique de repli sur '{fallback_model}'..."
                 )
-                return res
-            except Exception as fb_exc:
-                logger.warning(f"[WARNING] Le repli sur '{fallback_model}' a échoué: {fb_exc}")
+                try:
+                    fallback_kwargs = dict(llm_kwargs)
+                    fallback_kwargs["model"] = fallback_model
+                    if target_base:
+                        fallback_kwargs["base_url"] = target_base
+                    fallback_llm = ChatOpenAI(**fallback_kwargs).with_structured_output(OpportunityAnalysisOutput)
+                    fallback_chain = prompt_template | fallback_llm
+                    res = fallback_chain.invoke({"posts_content": posts_content})
+                    logger.info(
+                        f"[INFO] Analyse réussie avec le modèle de repli '{fallback_model}' : "
+                        f"{len(res.opportunities)} opportunités extraites !"
+                    )
+                    return res
+                except Exception as fb_exc:
+                    logger.warning(f"[WARNING] Le repli sur '{fallback_model}' a échoué: {fb_exc}")
 
         logger.error(
             f"[ERROR] Échec lors de l'appel LLM: {exc}\n"
