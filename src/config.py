@@ -18,7 +18,12 @@ class Config:
     # --- Apify Settings ---
     APIFY_API_TOKEN: str = os.getenv("APIFY_API_TOKEN", "").strip()
     raw_actor = os.getenv("APIFY_ACTOR_ID", "").strip()
-    APIFY_ACTOR_ID: str = raw_actor if raw_actor and "/" in raw_actor else "trudax/reddit-scraper"
+    # Note : trudax/reddit-scraper requiert désormais une location mensuelle payante ($20/mois).
+    # harshmaur/reddit-scraper-pro utilise le pay-per-event standard sans abonnement et fonctionne directement avec les crédits gratuits Apify.
+    if not raw_actor or "trudax/reddit-scraper" in raw_actor or "/" not in raw_actor:
+        APIFY_ACTOR_ID: str = "harshmaur/reddit-scraper-pro"
+    else:
+        APIFY_ACTOR_ID: str = raw_actor
     
     # Subreddits à surveiller (supporte séparateurs virgule, espace ou point-virgule et retire 'r/')
     SUBREDDITS_RAW: str = os.getenv("SUBREDDITS", "Entrepreneur,startups,smallbusiness")

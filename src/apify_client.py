@@ -5,7 +5,9 @@ r/Entrepreneur, r/startups, r/smallbusiness.
 Minimizes compute units to stay safely within Apify's free tier.
 """
 
+import re
 import logging
+from datetime import datetime
 from typing import List, Dict, Any
 from .config import config
 from .models import RedditPost
@@ -124,11 +126,11 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
         logger.error("Le package apify-client n'est pas installé. Lancez 'pip install apify-client'")
         raise
 
-    logger.info(f"[INFO] Initialisation du client Apify avec l'acteur '{config.APIFY_ACTOR_ID}'")
+    actor_id = config.APIFY_ACTOR_ID
+    logger.info(f"[INFO] Initialisation du client Apify avec l'acteur '{actor_id}'")
     client = ApifyClient(config.APIFY_API_TOKEN)
 
     # Construction de l'input pour un run UNIQUE regroupant les 3 subreddits
-    # Utilisation des URLs /new/ pour capter les dernières 24h
     start_urls = [
         {"url": f"https://www.reddit.com/r/{sub}/new/"}
         for sub in config.SUBREDDITS
@@ -138,9 +140,12 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
 
     run_input = {
         "startUrls": start_urls,
+        "subreddits": config.SUBREDDITS,
+        "maxPosts": config.POSTS_PER_SUBREDDIT,
         "maxItems": total_max_items,
-        "maxCommentsPerPost": 5,      # Limité à 5 commentaires par post pour préserver la mémoire et le coût
-        "scrollTimeout": 30,          # Évite les sessions traînantes
+        "scrapeComments": False,
+        "maxCommentsPerPost": 3,
+        "scrollTimeout": 30,
         "proxy": {"useApifyProxy": True}
     }
 
@@ -150,7 +155,20 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
     )
 
     try:
-        run = client.actor(config.APIFY_ACTOR_ID).call(run_input=run_input)
+        try:
+            run = client.actor(actor_id).call(run_input=run_input)
+        except Exception as exc:
+            err_msg = str(exc).lower()
+            if "must rent" in err_msg or "free trial" in err_msg or "trial has expired" in err_msg:
+                logger.warning(
+                    f"[WARNING] L'acteur '{actor_id}' exige une location payante ou son essai est expiré. "
+                    "Bascule automatique sur 'harshmaur/reddit-scraper-pro' (inclus dans l'offre gratuite Apify)..."
+                )
+                actor_id = "harshmaur/reddit-scraper-pro"
+                run = client.actor(actor_id).call(run_input=run_input)
+            else:
+                raise
+
         dataset_id = run.get("defaultDatasetId")
         logger.info(f"[INFO] Run Apify terminé avec succès. Dataset ID: {dataset_id}")
 
@@ -171,11 +189,35 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
         raise RuntimeError(f"Erreur Apify: {exc}") from exc
 
 
+def _parse_created_utc(val: Any) -> float:
+    """Convertit un timestamp numérique ou une date ISO en timestamp UTC float."""
+    if not val:
+        return 0.0
+    if isinstance(val, (int, float)):
+        return float(val)
+    if isinstance(val, str):
+        try:
+            return float(val)
+        except ValueError:
+            pass
+        try:
+            clean_val = val.replace("Z", "+00:00")
+            return datetime.fromisoformat(clean_val).timestamp()
+        except Exception:
+            return 0.0
+    return 0.0
+
+
 def _parse_apify_item(item: Dict[str, Any]) -> RedditPost:
     """Parse un enregistrement brut d'Apify vers notre modèle RedditPost standardisé."""
-    raw_sub = item.get("subreddit", "") or item.get("communityName", "")
-    if not raw_sub.startswith("r/"):
-        raw_sub = f"r/{raw_sub}"
+    raw_sub = (
+        item.get("subreddit", "")
+        or item.get("communityName", "")
+        or item.get("parsedCommunityName", "")
+    )
+    # Nettoyage des doublons éventuels r/r/
+    raw_sub = re.sub(r"^(/?r/)+", "", raw_sub).strip()
+    clean_sub = f"r/{raw_sub}" if raw_sub else "r/Entrepreneur"
 
     # Extraction des commentaires si présents
     comments_raw = item.get("comments", []) or []
@@ -190,15 +232,30 @@ def _parse_apify_item(item: Dict[str, Any]) -> RedditPost:
         if text.strip():
             extracted_comments.append(text.strip()[:300])
 
+    # Numéro de commentaires
+    n_comments = (
+        item.get("commentsCount")
+        or item.get("numberOfComments")
+        or len(extracted_comments)
+        or 0
+    )
+
+    # Score / upvotes
+    score_val = item.get("score") if item.get("score") is not None else item.get("upVotes")
+    try:
+        final_score = int(score_val or 0)
+    except (ValueError, TypeError):
+        final_score = 0
+
     return RedditPost(
-        id=str(item.get("id") or item.get("postId") or hash(item.get("url", ""))),
-        subreddit=raw_sub,
-        title=item.get("title", "").strip(),
-        selftext=item.get("selftext", "") or item.get("body", "") or item.get("description", ""),
-        url=item.get("url", "") or item.get("postUrl", ""),
-        author=item.get("author", None),
-        score=int(item.get("score", 0) or item.get("upVotes", 0) or 0),
-        num_comments=int(item.get("numberOfComments", 0) or item.get("commentsCount", 0) or len(extracted_comments)),
-        created_utc=float(item.get("createdUtc", 0) or item.get("createdAt", 0) or 0.0),
+        id=str(item.get("id") or item.get("parsedId") or item.get("postId") or hash(item.get("url", ""))),
+        subreddit=clean_sub,
+        title=str(item.get("title", "")).strip(),
+        selftext=str(item.get("body", "") or item.get("selftext", "") or item.get("description", "")),
+        url=str(item.get("postUrl", "") or item.get("url", "") or item.get("contentUrl", "")),
+        author=item.get("authorName") or item.get("author") or item.get("username"),
+        score=final_score,
+        num_comments=int(n_comments),
+        created_utc=_parse_created_utc(item.get("createdAt") or item.get("createdUtc")),
         comments=extracted_comments
     )
