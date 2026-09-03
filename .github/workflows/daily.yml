@@ -2,11 +2,9 @@ name: Daily Reddit Opportunities Scraper
 
 on:
   schedule:
-    # Déclenchement quotidien à 06:00 UTC (soit ~07:00 heure d'hiver de Paris / 08:00 heure d'été)
     - cron: '0 6 * * *'
-  workflow_dispatch: # Permet le lancement manuel depuis l'onglet Actions de GitHub
+  workflow_dispatch:
 
-# Autorisation indispensable pour permettre au bot de pousser les nouveaux rapports générés
 permissions:
   contents: write
 
@@ -36,10 +34,9 @@ jobs:
 
       - name: 🚀 Lancement du scraper et de l'analyseur LLM
         env:
-          # Secrets requis configurés dans GitHub Settings > Secrets and variables > Actions
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+          APIFY_ACTOR_ID: "harshmaur/reddit-scraper-pro"
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          # Variables optionnelles pour OmniRoute ou fournisseur alternatif
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           SUBREDDITS: "Entrepreneur,startups,smallbusiness"
@@ -57,7 +54,6 @@ jobs:
           
           git add reports/ data/
           
-          # Ne commit que s'il y a de nouveaux fichiers générés
           if git diff --staged --quiet; then
             echo "ℹ️ Aucun nouveau rapport à committer."
           else
