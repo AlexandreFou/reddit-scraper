@@ -211,28 +211,38 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         target_base = "https://api.groq.com/openai/v1"
 
     target_model = config.LLM_MODEL.strip().strip("'\"")
+    is_groq = "groq.com" in target_base or config.LLM_API_KEY.startswith("gsk_")
 
-    # Si la clé est une clé Groq (préfixe gsk_), forcer l'endpoint Groq et un modèle Llama
-    if config.LLM_API_KEY.startswith("gsk_"):
-        if not target_base or "api.openai.com" in target_base:
-            logger.info("[INFO] Clé Groq détectée ('gsk_...') : routage automatique vers 'https://api.groq.com/openai/v1'")
-            target_base = "https://api.groq.com/openai/v1"
-        if not target_model or "gpt-" in target_model:
-            logger.info("[INFO] Clé Groq détectée avec modèle GPT : bascule automatique sur 'llama-3.3-70b-versatile'")
-            target_model = "llama-3.3-70b-versatile"
+    # Modèles Groq actuellement actifs (Groq a retiré Llama 3.1/3.3 du free tier le 16 août 2026)
+    groq_active_models = [
+        "qwen/qwen3.6-27b",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
+        "meta-llama/llama-4-maverick-17b-128e-instruct",
+    ]
 
-    # Si le modèle est un modèle Llama mais que la base_url est OpenAI, corriger vers Groq
-    if "llama" in target_model.lower() and (not target_base or "api.openai.com" in target_base):
-        logger.info("[INFO] Modèle Llama demandé : routage automatique vers 'https://api.groq.com/openai/v1'")
-        target_base = "https://api.groq.com/openai/v1"
-
-    logger.info(
-        f"[INFO] Initialisation du modèle LLM : '{target_model}' "
-        f"(Base URL: {target_base or 'OpenAI Default'})"
+    deprecated_models = (
+        "llama-3.3-70b-versatile",
+        "llama-3.1-8b-instant",
+        "gemma2-9b-it",
+        "mixtral-8x7b-32768",
+        "llama-3.1-70b",
     )
 
+    if is_groq:
+        if not target_base or "api.openai.com" in target_base:
+            logger.info("[INFO] Clé Groq détectée ('gsk_...') : routage vers 'https://api.groq.com/openai/v1'")
+            target_base = "https://api.groq.com/openai/v1"
+        if not target_model or any(dep in target_model for dep in deprecated_models) or target_model.startswith("gpt-"):
+            logger.info(
+                f"[AUTO-MIGRATION GROQ] Modèle '{target_model}' déprécié ou inadapté. "
+                f"Bascule automatique sur le modèle de référence Groq : 'qwen/qwen3.6-27b'"
+            )
+            target_model = "qwen/qwen3.6-27b"
+
     key_prefix = config.LLM_API_KEY[:4] if config.LLM_API_KEY else "VIDE"
-    
+
     # Auto-inspection des modèles disponibles via l'API
     available_models = []
     if config.LLM_API_KEY:
@@ -242,7 +252,11 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
             models_endpoint = f"{target_base}/models" if target_base else "https://api.openai.com/v1/models"
             req = urllib.request.Request(
                 models_endpoint,
-                headers={"Authorization": f"Bearer {config.LLM_API_KEY}"}
+                headers={
+                    "Authorization": f"Bearer {config.LLM_API_KEY}",
+                    "User-Agent": "Mozilla/5.0 (compatible; RedditScraper/1.0)",
+                    "Accept": "application/json"
+                }
             )
             with urllib.request.urlopen(req, timeout=10) as resp:
                 resp_json = json.loads(resp.read().decode())
@@ -259,30 +273,12 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         logger.warning(
             f"[ATTENTION] Le modèle '{target_model}' n'est pas dans la liste des modèles autorisés sur votre compte !"
         )
-        # Priorités de sélection pour Groq
-        candidates = [
-            "llama-3.3-70b-versatile",
-            "llama-3.1-8b-instant",
-            "meta-llama/llama-4-scout-17b-16e-instruct",
-            "meta-llama/llama-4-maverick-17b-128e-instruct",
-            "qwen/qwen3.6-27b",
-            "openai/gpt-oss-120b",
-            "gemma2-9b-it",
-            "mixtral-8x7b-32768",
-        ]
+        candidates = groq_active_models if is_groq else ["gpt-4o-mini", "gpt-4o"]
         chosen = None
         for cand in candidates:
             if cand in available_models:
                 chosen = cand
                 break
-        
-        if not chosen:
-            # Chercher un modèle contenant 'llama' ou '70b' ou '8b'
-            for m in available_models:
-                if any(k in m.lower() for k in ["llama", "70b", "8b", "versatile", "instant"]):
-                    chosen = m
-                    break
-
         if not chosen and available_models:
             chosen = available_models[0]
 
@@ -305,29 +301,33 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
 
     try:
         llm = ChatOpenAI(**llm_kwargs)
-        # Utilisation de la méthode moderne with_structured_output de LangChain
         structured_llm = llm.with_structured_output(OpportunityAnalysisOutput)
     except Exception as exc:
         logger.error(
             f"[ERROR] Échec d'initialisation du LLM avec le modèle '{config.LLM_MODEL}'. "
-            f"Détail : {exc}\n"
-            "Vérifiez que LLM_MODEL est compatible avec votre fournisseur (OmniRoute, OpenAI, etc.)."
+            f"Détail : {exc}"
         )
         raise
 
-    # Préparation du prompt d'entrée avec les publications Reddit filtrées
-    formatted_posts_text = []
-    for idx, post in enumerate(posts, 1):
-        comments_preview = "\n  - ".join(post.comments[:3]) if post.comments else "Aucun commentaire pertinent"
-        formatted_posts_text.append(
-            f"--- POST {idx} [{post.subreddit}] (Upvotes: {post.score}, Comms: {post.num_comments}) ---\n"
-            f"Titre: {post.title}\n"
-            f"URL: {post.url}\n"
-            f"Contenu: {post.selftext[:800]}\n"
-            f"Commentaires clés:\n  - {comments_preview}\n"
-        )
+    def _format_posts_payload(post_list: List[RedditPost], char_limit: int = 400) -> str:
+        formatted = []
+        for idx, post in enumerate(post_list, 1):
+            comms = [c[:150] for c in (post.comments[:2] if post.comments else [])]
+            comments_preview = "\n  - ".join(comms) if comms else "Aucun commentaire pertinent"
+            formatted.append(
+                f"--- POST {idx} [{post.subreddit}] (Upvotes: {post.score}, Comms: {post.num_comments}) ---\n"
+                f"Titre: {post.title}\n"
+                f"URL: {post.url}\n"
+                f"Contenu: {post.selftext[:char_limit]}\n"
+                f"Commentaires clés:\n  - {comments_preview}\n"
+            )
+        return "\n".join(formatted)
 
-    posts_content = "\n".join(formatted_posts_text)
+    # Sur le tier gratuit de Groq, la limite TPM est de 8000 tokens.
+    # 15 posts de 400 caractères consomment ~3000 tokens, restant bien sous le plafond.
+    max_input_posts = 15 if is_groq else 30
+    selected_posts = posts[:max_input_posts]
+    posts_content = _format_posts_payload(selected_posts, char_limit=400 if is_groq else 800)
 
     prompt_template = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
@@ -336,11 +336,27 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
                  "selon la grille stricte, et liste les types d'idées écartées.")
     ])
 
-    logger.info(f"[INFO] Envoi de {len(posts)} publications au LLM pour extraction structurée...")
+    logger.info(f"[INFO] Envoi de {len(selected_posts)} publications au LLM pour extraction structurée...")
+
+    def _invoke_with_resilience(active_llm, content: str, current_posts_list: List[RedditPost]):
+        chain = prompt_template | active_llm
+        try:
+            return chain.invoke({"posts_content": content})
+        except Exception as invocation_exc:
+            err_msg = str(invocation_exc).lower()
+            # En cas d'erreur de dépassement de quota tokens (413 Payload Too Large / TPM exceeded)
+            if ("413" in err_msg or "too large" in err_msg or "rate_limit_exceeded" in err_msg) and len(current_posts_list) > 6:
+                reduced_posts = current_posts_list[:8]
+                logger.warning(
+                    f"[AUTO-REDUCTION TPM] Dépassement de limite de tokens par minute. "
+                    f"Réduction automatique aux {len(reduced_posts)} meilleures publications et réessai immédiat..."
+                )
+                reduced_content = _format_posts_payload(reduced_posts, char_limit=300)
+                return chain.invoke({"posts_content": reduced_content})
+            raise
 
     try:
-        chain = prompt_template | structured_llm
-        result: OpportunityAnalysisOutput = chain.invoke({"posts_content": posts_content})
+        result: OpportunityAnalysisOutput = _invoke_with_resilience(structured_llm, posts_content, selected_posts)
 
         logger.info(
             f"[INFO] Analyse terminée avec succès : {len(result.opportunities)} opportunités extraites, "
@@ -350,7 +366,6 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
 
     except Exception as exc:
         err_str = str(exc).lower()
-        is_groq = "groq.com" in target_base or config.LLM_API_KEY.startswith("gsk_")
         if is_groq and not target_base:
             target_base = "https://api.groq.com/openai/v1"
 
@@ -358,12 +373,12 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         candidates_to_try = [m for m in available_models if m != target_model]
         if not candidates_to_try:
             candidates_to_try = (
-                ["llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768", "qwen/qwen3.6-27b"]
+                [m for m in groq_active_models if m != target_model]
                 if is_groq
                 else ["gpt-4o-mini"]
             )
 
-        if "model_not_found" in err_str or "does not exist" in err_str:
+        if "model_not_found" in err_str or "does not exist" in err_str or "model_decommissioned" in err_str:
             for fallback_model in candidates_to_try[:4]:
                 if fallback_model == target_model:
                     continue
@@ -376,8 +391,7 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
                     if target_base:
                         fallback_kwargs["base_url"] = target_base
                     fallback_llm = ChatOpenAI(**fallback_kwargs).with_structured_output(OpportunityAnalysisOutput)
-                    fallback_chain = prompt_template | fallback_llm
-                    res = fallback_chain.invoke({"posts_content": posts_content})
+                    res = _invoke_with_resilience(fallback_llm, posts_content, selected_posts)
                     logger.info(
                         f"[INFO] Analyse réussie avec le modèle de repli '{fallback_model}' : "
                         f"{len(res.opportunities)} opportunités extraites !"

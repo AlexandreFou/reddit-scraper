@@ -52,15 +52,20 @@ class Config:
     
     raw_model = os.getenv("LLM_MODEL", "").strip().strip("'\"")
     is_groq = "groq.com" in LLM_BASE_URL or LLM_API_KEY.startswith("gsk_")
-    if not raw_model or raw_model in ("gpt-4o-mini", "gpt-4o"):
-        if is_groq:
-            raw_model = "llama-3.3-70b-versatile"
-        else:
+    if is_groq:
+        # Modèles Groq recommandés (Groq a retiré Llama 3.1/3.3 du free tier le 16 août 2026 au profit de Qwen 3.6 et GPT-OSS)
+        if not raw_model or raw_model in ("gpt-4o-mini", "gpt-4o", "llama-3.3-70b-versatile", "llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768"):
+            raw_model = "qwen/qwen3.6-27b"
+    else:
+        if not raw_model:
             raw_model = "gpt-4o-mini"
     LLM_MODEL: str = raw_model
     
     # --- Filtering & Pipeline Limits ---
-    MAX_POSTS_FOR_LLM: int = int(os.getenv("MAX_POSTS_FOR_LLM", "30"))
+    # Sur Groq Free tier, la limite TPM est de 8000 tokens/minute.
+    # 15 posts soigneusement qualifiés consomment ~3000 tokens et évitent l'erreur 413 Payload Too Large.
+    default_max_posts = 15 if is_groq else 30
+    MAX_POSTS_FOR_LLM: int = int(os.getenv("MAX_POSTS_FOR_LLM", str(default_max_posts)))
     TOP_OPPORTUNITIES: int = int(os.getenv("TOP_OPPORTUNITIES", "10"))
     
     # --- Date & Timezone ---
