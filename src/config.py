@@ -37,16 +37,23 @@ class Config:
     POSTS_PER_SUBREDDIT: int = int(os.getenv("POSTS_PER_SUBREDDIT", "30"))
     
     # --- LLM / Groq / OmniRoute / OpenAI Settings ---
-    LLM_API_KEY: str = os.getenv("LLM_API_KEY", "").strip().strip("'\"")
+    raw_api_key = os.getenv("GROQ_API_KEY", "").strip() or os.getenv("LLM_API_KEY", "").strip()
+    LLM_API_KEY: str = raw_api_key.strip("'\"")
     
     raw_base_url = os.getenv("LLM_BASE_URL", "").strip().strip("'\"")
     if raw_base_url.endswith("/chat/completions"):
         raw_base_url = raw_base_url[:-len("/chat/completions")].rstrip("/")
+    
+    # Auto-détection Groq via la clé d'API (commence toujours par 'gsk_')
+    if LLM_API_KEY.startswith("gsk_") and (not raw_base_url or "openai.com" in raw_base_url):
+        raw_base_url = "https://api.groq.com/openai/v1"
+        
     LLM_BASE_URL: str = raw_base_url.rstrip("/")
     
     raw_model = os.getenv("LLM_MODEL", "").strip().strip("'\"")
-    if not raw_model or raw_model == "gpt-4o-mini":
-        if "groq.com" in LLM_BASE_URL:
+    is_groq = "groq.com" in LLM_BASE_URL or LLM_API_KEY.startswith("gsk_")
+    if not raw_model or raw_model in ("gpt-4o-mini", "gpt-4o"):
+        if is_groq:
             raw_model = "llama-3.3-70b-versatile"
         else:
             raw_model = "gpt-4o-mini"
