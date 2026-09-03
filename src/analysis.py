@@ -203,19 +203,41 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         logger.error("LangChain n'est pas installé. Exécutez 'pip install langchain langchain-openai'")
         raise
 
+    # Diagnostic et auto-correction intelligente pour Groq
+    target_base = config.LLM_BASE_URL.strip().rstrip("/") if config.LLM_BASE_URL else ""
+    if target_base.endswith("/chat/completions"):
+        target_base = target_base[:-len("/chat/completions")].rstrip("/")
+    if target_base in ("https://api.groq.com", "https://api.groq.com/v1"):
+        target_base = "https://api.groq.com/openai/v1"
+
+    target_model = config.LLM_MODEL.strip().strip("'\"")
+
+    # Si la clé est une clé Groq (préfixe gsk_), forcer l'endpoint Groq et un modèle Llama
+    if config.LLM_API_KEY.startswith("gsk_"):
+        if not target_base or "api.openai.com" in target_base:
+            logger.info("[INFO] Clé Groq détectée ('gsk_...') : routage automatique vers 'https://api.groq.com/openai/v1'")
+            target_base = "https://api.groq.com/openai/v1"
+        if not target_model or "gpt-" in target_model:
+            logger.info("[INFO] Clé Groq détectée avec modèle GPT : bascule automatique sur 'llama-3.3-70b-versatile'")
+            target_model = "llama-3.3-70b-versatile"
+
+    # Si le modèle est un modèle Llama mais que la base_url est OpenAI, corriger vers Groq
+    if "llama" in target_model.lower() and (not target_base or "api.openai.com" in target_base):
+        logger.info("[INFO] Modèle Llama demandé : routage automatique vers 'https://api.groq.com/openai/v1'")
+        target_base = "https://api.groq.com/openai/v1"
+
     logger.info(
-        f"[INFO] Initialisation du modèle LLM : '{config.LLM_MODEL}' "
-        f"(Base URL: {config.LLM_BASE_URL or 'OpenAI Default'})"
+        f"[INFO] Initialisation du modèle LLM : '{target_model}' "
+        f"(Base URL: {target_base or 'OpenAI Default'})"
     )
 
-    # Configuration du client LLM compatible OpenAI (OmniRoute, OpenAI, OpenRouter, Gemini)
     llm_kwargs = {
-        "model": config.LLM_MODEL,
+        "model": target_model,
         "api_key": config.LLM_API_KEY,
         "temperature": 0.2,
     }
-    if config.LLM_BASE_URL:
-        llm_kwargs["base_url"] = config.LLM_BASE_URL
+    if target_base:
+        llm_kwargs["base_url"] = target_base
 
     try:
         llm = ChatOpenAI(**llm_kwargs)
@@ -264,17 +286,21 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
 
     except Exception as exc:
         err_str = str(exc).lower()
-        is_groq = "groq.com" in (config.LLM_BASE_URL or "")
+        is_groq = "groq.com" in target_base or config.LLM_API_KEY.startswith("gsk_")
         fallback_model = "llama-3.1-8b-instant" if is_groq else "gpt-4o-mini"
+        if is_groq and not target_base:
+            target_base = "https://api.groq.com/openai/v1"
 
-        if ("model_not_found" in err_str or "does not exist" in err_str) and config.LLM_MODEL != fallback_model:
+        if ("model_not_found" in err_str or "does not exist" in err_str) and target_model != fallback_model:
             logger.warning(
-                f"[WARNING] Le modèle '{config.LLM_MODEL}' n'existe pas ou n'est pas accessible (404). "
+                f"[WARNING] Le modèle '{target_model}' n'existe pas ou n'est pas accessible (404). "
                 f"Tentative automatique de repli sur '{fallback_model}'..."
             )
             try:
                 fallback_kwargs = dict(llm_kwargs)
                 fallback_kwargs["model"] = fallback_model
+                if target_base:
+                    fallback_kwargs["base_url"] = target_base
                 fallback_llm = ChatOpenAI(**fallback_kwargs).with_structured_output(OpportunityAnalysisOutput)
                 fallback_chain = prompt_template | fallback_llm
                 res = fallback_chain.invoke({"posts_content": posts_content})
@@ -288,8 +314,8 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
 
         logger.error(
             f"[ERROR] Échec lors de l'appel LLM: {exc}\n"
-            f"Modèle testé : LLM_MODEL='{config.LLM_MODEL}', Base URL='{config.LLM_BASE_URL}'"
+            f"Modèle testé : LLM_MODEL='{target_model}', Base URL='{target_base}'"
         )
         raise RuntimeError(
-            f"Erreur d'appel LLM avec le modèle '{config.LLM_MODEL}': {exc}"
+            f"Erreur d'appel LLM avec le modèle '{target_model}': {exc}"
         ) from exc
