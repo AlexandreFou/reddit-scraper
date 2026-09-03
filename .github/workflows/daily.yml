@@ -1,0 +1,68 @@
+name: Daily Reddit Opportunities Scraper
+
+on:
+  schedule:
+    # Déclenchement quotidien à 06:00 UTC (soit ~07:00 heure d'hiver de Paris / 08:00 heure d'été)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Permet le lancement manuel depuis l'onglet Actions de GitHub
+
+# Autorisation indispensable pour permettre au bot de pousser les nouveaux rapports générés
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 📥 Récupération du dépôt
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configuration de Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🧪 Exécution des tests unitaires
+        run: |
+          pytest -v
+
+      - name: 🚀 Lancement du scraper et de l'analyseur LLM
+        env:
+          # Secrets requis configurés dans GitHub Settings > Secrets and variables > Actions
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          # Variables optionnelles pour OmniRoute ou fournisseur alternatif
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          SUBREDDITS: "Entrepreneur,startups,smallbusiness"
+          POSTS_PER_SUBREDDIT: 30
+          MAX_POSTS_FOR_LLM: 30
+          TOP_OPPORTUNITIES: 10
+          TIMEZONE: "Europe/Paris"
+        run: |
+          python -m src.main
+
+      - name: 📤 Sauvegarde et commit des rapports dans le repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add reports/ data/
+          
+          # Ne commit que s'il y a de nouveaux fichiers générés
+          if git diff --staged --quiet; then
+            echo "ℹ️ Aucun nouveau rapport à committer."
+          else
+            TODAY=$(date -u +"%Y-%m-%d")
+            git commit -m "📊 Daily Reddit Opportunities Report - ${TODAY} [skip ci]"
+            git push origin main
+            echo "✅ Rapport quotidien publié avec succès sur GitHub !"
+          fi

@@ -1,0 +1,21 @@
+# ========================================================
+# Reddit Opportunity Scraper - Python Requirements
+# ========================================================
+
+# Apify client for single-run Reddit scraping
+apify-client>=1.7.0
+
+# LangChain & OpenAI-compatible interface (supports OmniRoute, OpenAI, OpenRouter, Gemini)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+
+# Data validation & structured schema
+pydantic>=2.7.0
+
+# Environment variables & date/time handling
+python-dotenv>=1.0.0
+pytz>=2024.1
+
+# Testing framework
+pytest>=8.0.0

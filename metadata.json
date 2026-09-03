@@ -1,0 +1,7 @@
+{
+  "name": "Reddit Opportunity Scraper",
+  "description": "Scraper et analyseur quotidien d'opportunités entrepreneuriales sur Reddit via Apify, LangChain et GitHub Actions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
