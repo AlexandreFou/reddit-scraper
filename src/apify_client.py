@@ -169,7 +169,11 @@ def run_apify_reddit_scraper() -> List[RedditPost]:
             else:
                 raise
 
-        dataset_id = run.get("defaultDatasetId")
+        # Dans apify-client Python SDK, run est un objet Run avec l'attribut default_dataset_id
+        if isinstance(run, dict):
+            dataset_id = run.get("defaultDatasetId") or run.get("default_dataset_id")
+        else:
+            dataset_id = getattr(run, "default_dataset_id", None) or getattr(run, "defaultDatasetId", None)
         logger.info(f"[INFO] Run Apify terminé avec succès. Dataset ID: {dataset_id}")
 
         items = list(client.dataset(dataset_id).iterate_items())
