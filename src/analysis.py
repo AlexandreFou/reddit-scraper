@@ -297,8 +297,8 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         "model": target_model,
         "api_key": config.LLM_API_KEY,
         "temperature": 0.2,
-        # max_tokens explicite pour satisfaire les limites strictes de sortie (OTPM)
-        "max_tokens": 1800,
+        # max_tokens à 4096 pour permettre au LLM d'écrire le JSON complet sans être tronqué prématurément
+        "max_tokens": 4096,
     }
     if target_base:
         llm_kwargs["base_url"] = target_base
@@ -336,8 +336,11 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
     prompt_template = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         ("user", "Voici les publications Reddit à analyser pour aujourd'hui :\n\n{posts_content}\n\n"
-                 "Extrais les meilleures opportunités entrepreneuriales, attribue les notes sur 100 "
-                 "selon la grille stricte, et liste les types d'idées écartées.")
+                 "Consigne de synthèse :\n"
+                 "- Extrais entre 3 et 5 opportunités entrepreneuriales de très haute qualité (ne dépasse pas 5 pour garantir une réponse concise et complète).\n"
+                 "- Fournis des descriptions percutantes et concises pour chaque champ (1 à 3 phrases par critère).\n"
+                 "- Attribue les notes sur 100 selon la grille stricte.\n"
+                 "- Inclus 2 ou 3 exemples représentatifs d'idées rejetées.")
     ])
 
     logger.info(f"[INFO] Envoi de {len(selected_posts)} publications au LLM pour extraction structurée...")
@@ -384,7 +387,11 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
 
         is_recoverable_error = any(
             marker in err_str
-            for marker in ["model_not_found", "does not exist", "model_decommissioned", "rate_limit_exceeded", "429", "too many requests", "413"]
+            for marker in [
+                "model_not_found", "does not exist", "model_decommissioned",
+                "rate_limit_exceeded", "429", "too many requests", "413",
+                "json_validate_failed", "failed to generate json", "max completion tokens reached"
+            ]
         )
 
         if is_recoverable_error:
