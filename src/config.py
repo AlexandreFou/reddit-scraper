@@ -53,9 +53,15 @@ class Config:
     raw_model = os.getenv("LLM_MODEL", "").strip().strip("'\"")
     is_groq = "groq.com" in LLM_BASE_URL or LLM_API_KEY.startswith("gsk_")
     if is_groq:
-        # Modèles Groq recommandés (Groq a retiré Llama 3.1/3.3 du free tier le 16 août 2026 au profit de Qwen 3.6 et GPT-OSS)
-        if not raw_model or raw_model in ("gpt-4o-mini", "gpt-4o", "llama-3.3-70b-versatile", "llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768"):
-            raw_model = "qwen/qwen3.6-27b"
+        # Modèles Groq recommandés :
+        # openai/gpt-oss-120b offre une limite OTPM (Output Tokens Per Minute) beaucoup plus généreuse (4000-8000 tokens)
+        # que qwen3.6-27b qui est bridé à seulement 1000 OTPM sur le free tier.
+        if not raw_model or raw_model in (
+            "gpt-4o-mini", "gpt-4o", "llama-3.3-70b-versatile",
+            "llama-3.1-8b-instant", "gemma2-9b-it", "mixtral-8x7b-32768",
+            "qwen/qwen3.6-27b"
+        ):
+            raw_model = "openai/gpt-oss-120b"
     else:
         if not raw_model:
             raw_model = "gpt-4o-mini"

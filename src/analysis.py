@@ -213,13 +213,15 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
     target_model = config.LLM_MODEL.strip().strip("'\"")
     is_groq = "groq.com" in target_base or config.LLM_API_KEY.startswith("gsk_")
 
-    # Modèles Groq actuellement actifs (Groq a retiré Llama 3.1/3.3 du free tier le 16 août 2026)
+    # Modèles Groq actuellement actifs
+    # Note: openai/gpt-oss-120b dispose de limites OTPM (Output Tokens/Min) beaucoup plus élevées que qwen3.6-27b (1000 OTPM max sur tier gratuit)
     groq_active_models = [
-        "qwen/qwen3.6-27b",
         "openai/gpt-oss-120b",
         "openai/gpt-oss-20b",
-        "meta-llama/llama-4-scout-17b-16e-instruct",
-        "meta-llama/llama-4-maverick-17b-128e-instruct",
+        "qwen/qwen3.6-27b",
+        "qwen/qwen3.8-27b",
+        "groq/compound",
+        "groq/compound-mini",
     ]
 
     deprecated_models = (
@@ -237,9 +239,9 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         if not target_model or any(dep in target_model for dep in deprecated_models) or target_model.startswith("gpt-"):
             logger.info(
                 f"[AUTO-MIGRATION GROQ] Modèle '{target_model}' déprécié ou inadapté. "
-                f"Bascule automatique sur le modèle de référence Groq : 'qwen/qwen3.6-27b'"
+                f"Bascule automatique sur le modèle de référence Groq : 'openai/gpt-oss-120b'"
             )
-            target_model = "qwen/qwen3.6-27b"
+            target_model = "openai/gpt-oss-120b"
 
     key_prefix = config.LLM_API_KEY[:4] if config.LLM_API_KEY else "VIDE"
 
@@ -295,6 +297,8 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         "model": target_model,
         "api_key": config.LLM_API_KEY,
         "temperature": 0.2,
+        # max_tokens explicite pour satisfaire les limites strictes de sortie (OTPM)
+        "max_tokens": 1800,
     }
     if target_base:
         llm_kwargs["base_url"] = target_base
@@ -378,12 +382,17 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
                 else ["gpt-4o-mini"]
             )
 
-        if "model_not_found" in err_str or "does not exist" in err_str or "model_decommissioned" in err_str:
+        is_recoverable_error = any(
+            marker in err_str
+            for marker in ["model_not_found", "does not exist", "model_decommissioned", "rate_limit_exceeded", "429", "too many requests", "413"]
+        )
+
+        if is_recoverable_error:
             for fallback_model in candidates_to_try[:4]:
                 if fallback_model == target_model:
                     continue
                 logger.warning(
-                    f"[WARNING] Tentative automatique de repli sur '{fallback_model}'..."
+                    f"[WARNING] Tentative automatique de repli sur le modèle disponible '{fallback_model}'..."
                 )
                 try:
                     fallback_kwargs = dict(llm_kwargs)
