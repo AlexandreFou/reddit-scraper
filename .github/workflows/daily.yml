@@ -2,8 +2,8 @@ name: Daily Reddit Opportunities Scraper
 
 on:
   schedule:
-    # Déclenchement quotidien à 06:00 UTC (soit ~07:00 heure d'hiver de Paris / 08:00 heure d'été)
-    - cron: '0 6 * * *'
+    # 05:00 UTC = 07:00 heure de Paris en été (UTC+2) / 06:00 en hiver (UTC+1)
+    - cron: '0 5 * * *'
   workflow_dispatch: # Permet le lancement manuel depuis l'onglet Actions de GitHub
 
 # Autorisation indispensable pour permettre au bot de pousser les nouveaux rapports générés
