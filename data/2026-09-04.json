@@ -1,0 +1,154 @@
+{
+  "date": "2026-09-04",
+  "generated_at": "2026-09-04T12:14:18.661876Z",
+  "posts_scraped_total": 53,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 23,
+    "r/smallbusiness": 15,
+    "r/startups": 15
+  },
+  "opportunities": [
+    {
+      "title": "LeadFollow Pro",
+      "problem": "Businesses lose leads because they reply too slowly, forget to follow up, or let conversations disappear across different inboxes.",
+      "target_customer": "Small to medium B2B companies with sales teams using multiple inboxes",
+      "opportunity": "A SaaS that automates follow‑up conversations, answers using company information, and moves leads toward booking or sale.",
+      "proposed_solution": "Web‑based platform integrating email, chat, and CRM, using NLP to draft replies, schedule follow‑ups, and track lead velocity.",
+      "why_now": "Remote work has increased email volume and sales teams need automation to maintain lead velocity and reduce churn.",
+      "monetization": "Monthly SaaS subscription per user or per lead volume.",
+      "launch_difficulty": "Modéré – nécessite des intégrations API et un module IA de base.",
+      "ai_automation_potential": "Élevé – NLP pour réponses automatiques et timing prédictif.",
+      "demand_signals": [
+        "Post 11 describes a product built to solve this exact pain; only 1 paying customer indicates early traction but a clear need."
+      ],
+      "risks": [
+        "Existing CRM competitors; adoption barriers; data privacy concerns."
+      ],
+      "validation_steps": [
+        "Interview 10 sales managers about follow‑up pain.",
+        "Create a landing page with email capture for early interest.",
+        "Offer a free trial to 5 companies and measure engagement.",
+        "Collect feedback on feature priorities."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 15,
+        "monetization_potential": 12,
+        "market_size_niche": 10,
+        "competition_saturation": 4,
+        "launch_ease": 6,
+        "ai_automation_potential": 8,
+        "total_score": 70,
+        "score_reasoning": "Le problème est douloureux et coûteux (15/20). La demande est observable via le post et le besoin de solutions d’automatisation (15/20). Le modèle SaaS est crédible (12/15). Le marché des petites/ moyennes entreprises B2B est suffisant (10/15). La concurrence existe mais le segment est encore mal desservi (4/10). Le MVP est faisable avec intégrations API (6/10). L’IA offre un gain d’efficacité important (8/10)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1w6f7b8/4_months_after_launch_we_have_1_paying_customer/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1w6f7b8"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "IdeaValidator",
+      "problem": "Entrepreneurs lack industry knowledge to validate ideas, leading to wasted time building products in unfamiliar verticals.",
+      "target_customer": "Aspiring founders and early‑stage entrepreneurs exploring new industries",
+      "opportunity": "Marketplace connecting founders with vetted industry experts for structured validation, including workflow mapping, pain‑point discovery, and market sizing.",
+      "proposed_solution": "Platform offering interview templates, AI‑summarized insights, and a booking system for expert sessions.",
+      "why_now": "The surge of self‑funded startups demands rapid validation to avoid building dead products; industry knowledge gaps are a common pain point.",
+      "monetization": "Commission on expert sessions or subscription for unlimited access to validation tools.",
+      "launch_difficulty": "Modéré – nécessite la création d’un marketplace, la vérification d’experts et la mise en place d’outils de résumé IA.",
+      "ai_automation_potential": "Modéré – IA peut suggérer des questions d’interview et résumer les notes.",
+      "demand_signals": [
+        "Post 14 explicitly asks how to validate ideas in an industry you know nothing about, indicating a demand for such a service."
+      ],
+      "risks": [
+        "Recruter des experts de qualité ; garantir la fiabilité des insights ; concurrence avec les cabinets de conseil."
+      ],
+      "validation_steps": [
+        "Sondage auprès de 20 fondateurs sur leurs douleurs de validation.",
+        "Créer un prototype de questionnaire d’interview.",
+        "Piloter avec 3 experts et 5 fondateurs pour tester la valeur ajoutée.",
+        "Mesurer la volonté de payer et le taux de conversion."
+      ],
+      "scoring": {
+        "problem_intensity": 10,
+        "observable_demand": 12,
+        "monetization_potential": 10,
+        "market_size_niche": 12,
+        "competition_saturation": 5,
+        "launch_ease": 7,
+        "ai_automation_potential": 5,
+        "total_score": 61,
+        "score_reasoning": "Le problème est réel mais moins critique que le premier (10/20). La demande est observable via le post (12/20). Le modèle de commission/subscription est crédible (10/15). Le marché des fondateurs est assez large (12/15). La concurrence est présente mais le besoin d’une plateforme structurée reste (5/10). Le MVP est faisable avec un petit équipe (7/10). L’IA apporte un gain modéré (5/10)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1w5xi6r/how_do_you_validate_a_business_idea_in_an/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1w5xi6r"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Feedback Friday: Rate My Ideas | September 04, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "📋 Entrepreneur Moderator Applications Open - Apply Now!",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Seis/eis",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "As a local small business owner, what is your biggest headache?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Thinking about what the next chapter could look like.",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Are corporate retreats valuable? I will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "2 Internships | 10+ Deployed Projects | Al Research Paper | 2026 Grad seeking internship or fulltime",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "How do you stop feeling ''guilt'' or miserable about not making as much as others?",
+      "reason": "Pas de problème actionnable – sentiment personnel sans besoin de produit.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "What’s one thing you wish you knew before starting your business?",
+      "reason": "Question généraliste sans problème concret identifié.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Business is tough...",
+      "reason": "État émotionnel sans problème spécifique à résoudre.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
