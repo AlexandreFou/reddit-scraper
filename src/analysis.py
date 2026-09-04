@@ -336,11 +336,11 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
     prompt_template = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         ("user", "Voici les publications Reddit à analyser pour aujourd'hui :\n\n{posts_content}\n\n"
-                 "Consigne de synthèse :\n"
-                 "- Extrais entre 3 et 5 opportunités entrepreneuriales de très haute qualité (ne dépasse pas 5 pour garantir une réponse concise et complète).\n"
-                 "- Fournis des descriptions percutantes et concises pour chaque champ (1 à 3 phrases par critère).\n"
-                 "- Attribue les notes sur 100 selon la grille stricte.\n"
-                 "- Inclus 2 ou 3 exemples représentatifs d'idées rejetées.")
+                 "Consigne de formatage STRICT :\n"
+                 "Ton objet JSON de réponse DOIT OBLIGATOIREMENT contenir les DEUX clés racines suivantes :\n"
+                 "1. 'opportunities' : Liste de 2 à 4 opportunités entrepreneuriales de très haute qualité (descriptions concises, 1 à 2 phrases par champ).\n"
+                 "2. 'rejected_ideas' : Liste de 2 ou 3 idées ou types de posts rejetés (avec 'title_or_topic', 'reason', 'category').\n"
+                 "N'omets JAMAIS la clé 'rejected_ideas'.")
     ])
 
     logger.info(f"[INFO] Envoi de {len(selected_posts)} publications au LLM pour extraction structurée...")
@@ -376,14 +376,15 @@ def analyze_posts_with_langchain(posts: List[RedditPost]) -> OpportunityAnalysis
         if is_groq and not target_base:
             target_base = "https://api.groq.com/openai/v1"
 
-        # Liste de replis potentiels
-        candidates_to_try = [m for m in available_models if m != target_model]
-        if not candidates_to_try:
-            candidates_to_try = (
-                [m for m in groq_active_models if m != target_model]
-                if is_groq
-                else ["gpt-4o-mini"]
-            )
+        # Liste de replis potentiels parmi les modèles text/chat réellement compatibles
+        incompatible_prefixes = ("whisper", "canopylabs", "meta-llama/llama-prompt-guard", "allam")
+        chat_capable_available = [
+            m for m in available_models
+            if m != target_model and not any(m.startswith(p) for p in incompatible_prefixes)
+        ]
+        candidates_to_try = chat_capable_available or [
+            m for m in groq_active_models if m != target_model
+        ] if is_groq else ["gpt-4o-mini"]
 
         is_recoverable_error = any(
             marker in err_str

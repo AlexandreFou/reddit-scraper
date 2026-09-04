@@ -156,9 +156,9 @@ class OpportunityAnalysisOutput(BaseModel):
         default_factory=list,
         description="Liste des opportunités entrepreneuriales extraites et scorées"
     )
-    rejected_ideas: List[RejectedIdea] = Field(
+    rejected_ideas: Optional[List[RejectedIdea]] = Field(
         default_factory=list,
-        description="Sélection représentative de publications ou idées écartées"
+        description="Sélection représentative de publications ou idées écartées (optionnel)"
     )
 
 
