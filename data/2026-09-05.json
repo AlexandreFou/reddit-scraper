@@ -1,0 +1,208 @@
+{
+  "date": "2026-09-05",
+  "generated_at": "2026-09-05T08:55:37.552254Z",
+  "posts_scraped_total": 54,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 24,
+    "r/smallbusiness": 15,
+    "r/startups": 15
+  },
+  "opportunities": [
+    {
+      "title": "AI‑driven signal‑triggered LinkedIn outreach platform",
+      "problem": "Entrepreneurs run outbound campaigns based on static lists, missing timely signals; they waste effort on cold messages that underperform.",
+      "target_customer": "Growth marketers and founders doing B2B LinkedIn outreach",
+      "opportunity": "Software that monitors real‑time signals (funding rounds, job changes, product launches) and automatically schedules personalized LinkedIn messages at the optimal moment",
+      "proposed_solution": "SaaS that integrates with LinkedIn API, ingests signal feeds, uses templates, and sends messages with a timing engine",
+      "why_now": "Increasing availability of public signal data and LinkedIn API restrictions make manual timing inefficient; AI can automate personalization and timing",
+      "monetization": "Monthly SaaS subscription per seat, tiered by number of signals processed",
+      "launch_difficulty": "Faible : No‑code workflow with Zapier + GPT for message generation; MVP in 2 weeks",
+      "ai_automation_potential": "9",
+      "demand_signals": [
+        "Signal‑triggered LinkedIn outreach campaigns outperform cold ones, and by a large margin",
+        "timing should be the number one priority"
+      ],
+      "risks": [
+        "LinkedIn API limitations",
+        "Data privacy compliance",
+        "Signal noise leading to low relevance"
+      ],
+      "validation_steps": [
+        "Survey 15 B2B salespeople about timing importance",
+        "Create a mockup and collect 20 pre‑orders",
+        "Run a manual pilot using a spreadsheet of signals for a week"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 14,
+        "monetization_potential": 13,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 8,
+        "ai_automation_potential": 9,
+        "total_score": 77,
+        "score_reasoning": "Clear pain around timing; strong observable demand from post; monetization via SaaS viable; large B2B outreach market; existing tools exist but few integrate real‑time signals; easy to launch; AI adds high value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1w7h64u/signaltriggered_linkedin_outreach_campaigns/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1w7h64u"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Marketplace & analytics for vetted cold‑call booking agents",
+      "problem": "Entrepreneurs struggle to hire effective cold‑call booking agents; hires often produce no conversions, leading to wasted time and uncertainty about lead quality.",
+      "target_customer": "SMB founders and solopreneurs who rely on outbound cold‑calling for lead generation",
+      "opportunity": "Create a platform that vets, rates, and provides performance dashboards for booking agents, with trial periods and pay‑per‑performance",
+      "proposed_solution": "SaaS marketplace where agents are pre‑screened, clients can run short test campaigns, and analytics track conversion rates, with escrow payment",
+      "why_now": "Rise of remote freelance sales talent and increasing reliance on outbound pipelines; lack of transparent performance data",
+      "monetization": "Subscription tier for access to agent pool + transaction fee on successful bookings",
+      "launch_difficulty": "Modéré : Build marketplace + basic analytics in 2‑3 months using no‑code + API integrations",
+      "ai_automation_potential": "8",
+      "demand_signals": [
+        "I tried hiring a cold call booking agent. I did, they made no conversions, only a bit some conversations saying \"send me info\"."
+      ],
+      "risks": [
+        "Dependence on agent supply quality",
+        "Potential legal issues with performance guarantees",
+        "Clients may revert to in‑house hiring"
+      ],
+      "validation_steps": [
+        "Interview 10 founders who use outbound agents about hiring pain",
+        "Run a landing page offering vetted agents and measure sign‑ups",
+        "Pilot with 2 agents and track conversion for a month"
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 12,
+        "monetization_potential": 12,
+        "market_size_niche": 11,
+        "competition_saturation": 7,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 73,
+        "score_reasoning": "Pain is high due to wasted spend; demand evident from post; monetization via subscription/fees plausible; market sizable among SMBs; moderate competition; launch feasible with existing tools; AI can enhance agent scoring."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1w70vea/a_good_employee_will_make_or_break_your_business/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1w70vea"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "End‑to‑end Vietnam sourcing & door‑to‑door shipping platform",
+      "problem": "Entrepreneurs are confused by D2D and port retrieval processes when shifting manufacturing from China to Vietnam, leading to delays and cost uncertainty.",
+      "target_customer": "SMBs and e‑commerce brands looking to source products from Vietnam",
+      "opportunity": "Platform that aggregates Vietnam manufacturers, provides transparent D2D shipping quotes, tracks customs, and offers a single dashboard",
+      "proposed_solution": "Marketplace with vetted factories, integrated freight forwarder API, step‑by‑step guide; optional concierge service for end‑to‑end handling",
+      "why_now": "US tariffs on China increase demand for Vietnam sourcing; logistics providers are digitizing, creating an opening for a unified solution",
+      "monetization": "Transaction fee on each order + premium subscription for analytics and priority support",
+      "launch_difficulty": "Modéré : Need partnerships with factories and freight forwarders; MVP with limited partners in 3 months",
+      "ai_automation_potential": "6",
+      "demand_signals": [
+        "Since the tariffs ... I'm curious if anyone is looking to Vietnam",
+        "Oftentimes the D2D (door to door) and port retrieval process is ... confuses my clients"
+      ],
+      "risks": [
+        "Regulatory changes in import/export",
+        "Reliance on third‑party freight partners",
+        "Currency fluctuations affecting cost estimates"
+      ],
+      "validation_steps": [
+        "Interview 10 e‑commerce founders about Vietnam sourcing pain",
+        "Create landing page offering free cost estimate, measure sign‑ups",
+        "Partner with one factory to run pilot shipment"
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 13,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 6,
+        "ai_automation_potential": 6,
+        "total_score": 69,
+        "score_reasoning": "Significant cost/delay pain; clear interest expressed; monetization via fees feasible; growing Vietnam manufacturing market; limited direct competition; moderate launch effort due to partner needs; AI can aid routing cost estimates."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1w6tus8/vietnam_manufacturing_and_shipping_has_anyone/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1w6tus8"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 05, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "downgraded my plan and lost the one feature i was paying for",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Starting an LLC after the fact - separating funds",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "ANYONE MAKING CUSTOMISED SILVER JEWELRY ?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Cookies",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Any tips on how to approach negotiating with renewal leases?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Can a non-US resident get an EIN faster than this estimate?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Moovs",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "How do you stop feeling 'guilt' or miserable about not making as much as others?",
+      "reason": "Expresses personal emotional state without a concrete business problem or demand for a solution",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "What’s one thing you wish you knew before starting your business?",
+      "reason": "Solicits generic advice; no specific pain point or actionable need identified",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "The weird way I win clients by “losing” negotiations",
+      "reason": "Describes a personal negotiation tactic rather than a systemic problem needing a product",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
