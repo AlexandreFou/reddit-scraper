@@ -1,0 +1,206 @@
+{
+  "date": "2026-09-08",
+  "generated_at": "2026-09-08T09:30:35.937110Z",
+  "posts_scraped_total": 59,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 29,
+    "r/startups": 15,
+    "r/smallbusiness": 15
+  },
+  "opportunities": [
+    {
+      "title": "Automated onboarding & activation platform for early-stage SaaS",
+      "problem": "Founders report that free‑trial users abandon the product before completing setup; in one Reddit post 10 invited users resulted in 0 completions, indicating high friction in onboarding and lost revenue potential.",
+      "target_customer": "Founders of SaaS products with free‑trial or freemium models, especially early‑stage startups",
+      "opportunity": "Provide a low‑code, AI‑guided onboarding flow that auto‑populates settings, sends contextual nudges, and tracks activation metrics to boost conversion from trial to paying user",
+      "proposed_solution": "A SaaS tool that integrates via API/SDK to guide new users through setup steps, auto‑fill data, and send automated, AI‑personalised reminders based on usage signals",
+      "why_now": "Competition for trial users is intensifying and AI‑driven personalised guidance is now affordable, making automated onboarding a clear differentiator",
+      "monetization": "Monthly subscription per active trial user (e.g., $20 / mo for up to 1,000 users) or revenue‑share model with SaaS partners",
+      "launch_difficulty": "Modéré : Build core integration and AI nudging in 1‑2 months with a small dev team",
+      "ai_automation_potential": "High: AI can predict drop‑off points and generate personalised prompts",
+      "demand_signals": [
+        "Free‑trial users dropping off before activation reported in r/Entrepreneur post 9 (ID 1vx8bwq)",
+        "Common onboarding friction discussed across startup communities"
+      ],
+      "risks": [
+        "Integration complexity with diverse SaaS stacks",
+        "Dependence on accurate usage data for AI predictions"
+      ],
+      "validation_steps": [
+        "Interview 10 SaaS founders about onboarding pain points",
+        "Create a mock onboarding flow and run a 2‑week pilot with 5 trial users",
+        "Measure activation‑rate improvement vs baseline"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 15,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 75,
+        "score_reasoning": "Strong pain (high churn) and clear demand, good monetisation potential, sizable SaaS market, moderate competition, reasonable launch effort, AI adds significant value"
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1vx8bwq/i_gave_10_people_free_access_to_my_product_0_of/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1vx8bwq"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "AI‑guided MVP scoping assistant for non‑technical founders",
+      "problem": "Non‑technical entrepreneurs feel overwhelmed deciding what to include in an MVP, leading to paralysis and delayed product launches.",
+      "target_customer": "First‑time founders without coding background who need to define a lean MVP",
+      "opportunity": "Create a conversational AI that asks key questions, prioritises features, and outputs a lean spec plus low‑fidelity wireframes, reducing uncertainty and time to launch",
+      "proposed_solution": "Web app where founders input problem description; AI generates user stories, a priority matrix, and basic mockups that can be exported to design tools",
+      "why_now": "AI coding assistants and template libraries have matured, enabling rapid generation of specs and designs without developer involvement",
+      "monetization": "One‑time fee per spec ($99) or subscription for unlimited projects ($30 / mo)",
+      "launch_difficulty": "Modéré : Build prompt chain and integrate with design API in ~1 month",
+      "ai_automation_potential": "Très haut: core feature generation is AI‑driven",
+      "demand_signals": [
+        "r/startups post 12 (ID 1wa1zkm) expresses overwhelm building MVP",
+        "Frequent queries on founder forums about MVP scope"
+      ],
+      "risks": [
+        "AI may produce unrealistic or overly generic specs",
+        "Users may become over‑reliant on AI and skip validation"
+      ],
+      "validation_steps": [
+        "Conduct 15 interviews with non‑tech founders about MVP pain",
+        "Prototype chatbot and measure satisfaction and spec usefulness",
+        "Track conversion rate from free trial to paid spec generation"
+      ],
+      "scoring": {
+        "problem_intensity": 13,
+        "observable_demand": 14,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 6,
+        "launch_ease": 8,
+        "ai_automation_potential": 9,
+        "total_score": 75,
+        "score_reasoning": "High pain for non‑tech founders, strong observable demand, good monetisation, large founder market, moderate competition, feasible launch, AI central"
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1wa1zkm/how_to_build_an_mvp_as_a_non_tech_i_will_not_promote/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1wa1zkm"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "AI‑generated content authenticity & compliance tool",
+      "problem": "Businesses using AI to create flyers and social posts face consumer backlash when AI‑generated assets are detected, harming brand trust and engagement.",
+      "target_customer": "Small‑to‑medium businesses and marketing agencies that produce visual or social media assets",
+      "opportunity": "Offer a tool that scans assets for AI signatures, suggests human‑touch edits, and provides a ‘human‑verified’ badge to restore credibility",
+      "proposed_solution": "A browser extension / SaaS service that analyses images and copy for AI patterns using detection models, offers rewrite suggestions, and generates a compliance badge for publishing",
+      "why_now": "Proliferation of AI generators and growing consumer skepticism make authenticity a competitive advantage; detection APIs are now mature",
+      "monetization": "Tiered subscription (e.g., $30 / mo for 500 checks) or per‑asset pricing",
+      "launch_difficulty": "Faible : MVP can be built with existing AI detection APIs in 2‑3 weeks using no‑code tools",
+      "ai_automation_potential": "Très haut: detection relies on AI models",
+      "demand_signals": [
+        "r/Entrepreneur post 3 (ID 1vy195n) warns against AI‑generated flyers",
+        "Increasing discussion on AI‑content backlash in marketing forums"
+      ],
+      "risks": [
+        "False positives/negatives could erode trust",
+        "Potential legal challenges around AI detection"
+      ],
+      "validation_steps": [
+        "Survey 20 marketers about authenticity concerns",
+        "Run a beta with 5 agencies to test detection accuracy",
+        "Track impact on engagement metrics before/after badge usage"
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 13,
+        "monetization_potential": 11,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 9,
+        "ai_automation_potential": 9,
+        "total_score": 74,
+        "score_reasoning": "Clear pain and observable demand, solid monetisation, sizable market of marketers, low competition in niche, easy launch, AI core"
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1vy195n/stop_using_ai_to_make_your_flyers_and_social_posts/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1vy195n"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "What could be the reasons why free subscribers do not pay? (I will not promote)",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Confused how to handle branding for my Corporate Retreat business. i will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "paid launchpads suck i will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Looking for start-up lawyer (I will not promote)",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Talent Tuesday: Services and Collabs | September 08, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Anybody know any good streams for solo founders",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Sunday Steam: Vent It or Roast It | September 06, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 05, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "My First 6 Months in the Hard Money Lending Business",
+      "reason": "Narrative without explicit pain point or actionable problem for entrepreneurs",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "You can’t share massive wins online without looking like an arrogant asshole",
+      "reason": "Opinionated commentary about perception, no concrete business problem to solve",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Literally no reason to use Supabase in 2026",
+      "reason": "Technical preference discussion, not a market‑wide entrepreneur pain",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
