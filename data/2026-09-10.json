@@ -1,0 +1,204 @@
+{
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10T09:32:10.366651Z",
+  "posts_scraped_total": 96,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 46,
+    "r/smallbusiness": 25,
+    "r/startups": 25
+  },
+  "opportunities": [
+    {
+      "title": "AI‑Powered Cold Outreach Optimizer",
+      "problem": "Founders and job‑seeking engineers report a near‑zero response rate to cold emails and LinkedIn messages despite spending time personalising them.",
+      "target_customer": "Software engineers and iOS developers looking for startup roles, and startup founders who outreach to candidates.",
+      "opportunity": "Provide an AI‑driven platform that analyses target companies, suggests hyper‑personalised outreach snippets and predicts optimal send times to boost reply rates.",
+      "proposed_solution": "A SaaS web app where users input a prospect profile; the system generates a customised email/LinkedIn message, A/B tests subject lines, and tracks reply metrics.",
+      "why_now": "Recent advances in large language models enable high‑quality, context‑aware copy generation at low cost, and remote hiring has surged, increasing demand for efficient outreach.",
+      "monetization": "Monthly SaaS subscription tiered by number of outreach credits (e.g., $29/mo for 100 credits, $99/mo for 500 credits).",
+      "launch_difficulty": "Modéré : MVP can be built in 4‑6 weeks using no‑code front‑end, OpenAI API for text generation, and simple email tracking.",
+      "ai_automation_potential": "L'IA génère le texte, analyse le profil du prospect et optimise les horaires d'envoi, réduisant le temps manuel de rédaction de 80 %.",
+      "demand_signals": [
+        "User reports zero response rate despite personalised cold emails (Post 4).",
+        "User explicitly seeks a non‑generic outreach approach (Post 4)."
+      ],
+      "risks": [
+        "Dependence on third‑party LLM APIs may affect cost and latency.",
+        "Email deliverability filters could limit effectiveness.",
+        "Existing cold‑outreach tools (Mailshake, Lemlist) create competitive pressure."
+      ],
+      "validation_steps": [
+        "Interview 10 software engineers who are job hunting about their outreach pain points.",
+        "Create a landing page with a mockup and capture email sign‑ups for early access.",
+        "Run a manual outreach test on 20 prospects using AI‑generated messages and measure reply rate vs. baseline."
+      ],
+      "scoring": {
+        "problem_intensity": 18,
+        "observable_demand": 16,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 6,
+        "launch_ease": 6,
+        "ai_automation_potential": 9,
+        "total_score": 80,
+        "score_reasoning": "The zero‑reply problem is painful (18). The post shows clear demand (16). SaaS model is credible (12). Large pool of job seekers gives good market size (13). Competition exists but AI differentiation offers room (6). MVP is feasible with existing APIs (6). High AI relevance (9)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1wan40g/startup_founders_what_actually_makes_you_respond/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1wan40g"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Automated Keyword Gap Analyzer for Small E‑commerce",
+      "problem": "Small dropshipping sites miss high‑value keywords, leading to an estimated $12,400/month of lost traffic and revenue.",
+      "target_customer": "Dropshipping and small e‑commerce owners who manage SEO themselves.",
+      "opportunity": "Offer an automated SaaS that scans a site, identifies high‑intent keyword gaps, and provides actionable content recommendations.",
+      "proposed_solution": "A web dashboard where users enter their domain; the tool crawls the site, compares against competitor keyword data, and outputs a prioritized keyword list with traffic estimates.",
+      "why_now": "AI‑enhanced natural‑language processing now allows rapid extraction of keyword intent and volume without costly manual research.",
+      "monetization": "Tiered subscription ($19/mo for 5 sites, $49/mo for 20 sites) with optional one‑time deep‑audit add‑on.",
+      "launch_difficulty": "Faible : MVP can be built in 2‑3 weeks using existing SEO APIs (e.g., SerpAPI) and a simple UI.",
+      "ai_automation_potential": "AI clusters keyword intent and predicts traffic impact, automating what is currently a manual 2‑hour analysis.",
+      "demand_signals": [
+        "User performed a 20‑minute keyword analysis and uncovered $12,400/month of missed value (Post 9).",
+        "User highlights that many site owners lack proper keyword research (Post 9)."
+      ],
+      "risks": [
+        "Reliance on third‑party search APIs may incur costs and rate limits.",
+        "Established SEO platforms could copy the feature set.",
+        "Accuracy of traffic estimates may vary."
+      ],
+      "validation_steps": [
+        "Survey 15 dropshipping owners about their current keyword research workflow and willingness to pay for automation.",
+        "Build a simple prototype that analyses one competitor site and present results to the surveyed owners.",
+        "Measure interest by tracking sign‑ups for a beta waitlist."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 14,
+        "monetization_potential": 13,
+        "market_size_niche": 14,
+        "competition_saturation": 4,
+        "launch_ease": 7,
+        "ai_automation_potential": 7,
+        "total_score": 74,
+        "score_reasoning": "Missed revenue is tangible (15). The post directly shows demand (14). SaaS pricing is realistic for e‑commerce owners (13). Large e‑commerce segment (14). High competition from SEO tools lowers score (4). MVP is straightforward (7). AI adds moderate value (7)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1ault4m/i_spent_20_mins_doing_keyword_analysis_for_a/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1ault4m"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Marketing ROI Dashboard for Boutique Service Businesses",
+      "problem": "A solo body‑contouring business spends $3k/month on marketing but nets only $24k profit annually, indicating unclear ROI.",
+      "target_customer": "Solo‑entrepreneurs and small service‑based businesses (e.g., aesthetic clinics, personal trainers).",
+      "opportunity": "Create a lightweight dashboard that aggregates ad spend, bookings, and profit to visualise true marketing ROI and suggest budget reallocations.",
+      "proposed_solution": "A SaaS where users connect their ad accounts (Facebook, Google) and booking software; the platform calculates cost‑per‑acquisition, lifetime value, and profit margins.",
+      "why_now": "Integration APIs for ad platforms are now open and affordable, and small businesses increasingly adopt data‑driven decisions post‑COVID.",
+      "monetization": "Monthly subscription $15/mo per business, with a free tier limited to one ad account.",
+      "launch_difficulty": "Modéré : Requires building connectors to ad APIs and a simple analytics UI, achievable in 6‑8 weeks.",
+      "ai_automation_potential": "AI can recommend budget shifts based on historical performance, reducing manual analysis time by ~60 %.",
+      "demand_signals": [
+        "Owner reports $3k/month marketing spend vs. $24k profit after expenses (Post 2).",
+        "Owner expresses uncertainty about marketing effectiveness (Post 2)."
+      ],
+      "risks": [
+        "Data privacy concerns when linking ad accounts.",
+        "Small businesses may rely on free tools (Google Analytics) and resist paying.",
+        "Technical maintenance of multiple API integrations."
+      ],
+      "validation_steps": [
+        "Conduct 10 interviews with solo service providers about their marketing tracking challenges.",
+        "Build a spreadsheet prototype that calculates ROI from ad spend and present it to interviewees.",
+        "Collect commitment to a paid pilot if the prototype saves them >10 % of ad spend."
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 13,
+        "monetization_potential": 11,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 6,
+        "ai_automation_potential": 5,
+        "total_score": 67,
+        "score_reasoning": "Profitability issue is real (14). Owner’s comment shows demand (13). SaaS pricing plausible (11). Large niche of solo service firms (13). Existing free analytics tools raise competition (5). MVP moderate effort (6). AI adds modest automation (5)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1wc8hjh/after_5_years_im_considering_selling_my_business/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1wc8hjh"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Thankful Thursday: Free Resources and Tools | September 10, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Sunday Steam: Vent It or Roast It | September 06, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 05, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Any lesser known but effective way of generating leads (Context Provided)",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "When did you realize it was time to raise the price of your product or service?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "anyone tried shopify new dispute tool for chargebacks",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "My Instagram account is a few days old and views are stuck at zero — what am I missing?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Barber Shop Chain Owners",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Crowded industry startup with $1.3B raised by incumbents",
+      "reason": "Post describes market saturation but does not articulate a specific pain point or actionable need; no clear demand signal.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Beat‑making app with $2,500 revenue over 2 years",
+      "reason": "Post shares revenue numbers but lacks a concrete problem statement or request for a solution; more a status update than a problem.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
