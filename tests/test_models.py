@@ -86,6 +86,17 @@ class TestModels(unittest.TestCase):
         )
         self.assertEqual(rej.category, "Spam/Promo")
 
+    def test_opportunity_analysis_output_none_rejected(self):
+        from src.models import OpportunityAnalysisOutput
+        output = OpportunityAnalysisOutput(opportunities=[], rejected_ideas=None)
+        # Test safe resolution as handled in main.py
+        raw_opps = output.opportunities or []
+        rejected = output.rejected_ideas or []
+        self.assertEqual(raw_opps, [])
+        self.assertEqual(rejected, [])
+        combined = [] + rejected
+        self.assertEqual(combined, [])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -101,8 +101,9 @@ def run_pipeline(dry_run: bool = False, custom_date: str = None) -> int:
         logger.error(f"[DIAGNOSTIC] Vérifiez que le modèle '{config.LLM_MODEL}' est disponible sur votre clé/endpoint.")
         return 1
 
-    raw_opportunities = analysis_result.opportunities
-    combined_rejected = rejected_ideas + analysis_result.rejected_ideas
+    raw_opportunities = analysis_result.opportunities or []
+    llm_rejected = analysis_result.rejected_ideas or []
+    combined_rejected = (rejected_ideas or []) + llm_rejected
     logger.info(f"[INFO] {len(raw_opportunities)} opportunités extraites par le LLM.")
 
     # 5. Déduplication, validation des scores et classement Top N
