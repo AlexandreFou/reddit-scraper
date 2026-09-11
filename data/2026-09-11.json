@@ -1,0 +1,154 @@
+{
+  "date": "2026-09-11",
+  "generated_at": "2026-09-11T12:10:59.569886Z",
+  "posts_scraped_total": 200,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 100,
+    "r/startups": 50,
+    "r/smallbusiness": 50
+  },
+  "opportunities": [
+    {
+      "title": "AutoInvoice: AI-Driven Overdue Invoice Follow-Up",
+      "problem": "Small agencies struggle to manage overdue invoice reminders, leading to manual tracking, lost revenue, and recurring headaches.",
+      "target_customer": "Small agencies (design, marketing, consulting) with 1‑10 employees",
+      "opportunity": "Provide an automated reminder system that syncs with popular invoicing tools, sends personalized emails, tracks responses, and offers analytics to reduce manual effort and improve collections.",
+      "proposed_solution": "SaaS platform integrating with QuickBooks, Xero, and Stripe via APIs; AI‑generated email content; smart scheduling; escalation workflows; dashboard for overdue metrics.",
+      "why_now": "Remote work and digital agencies have grown, many still rely on spreadsheets; automation demand is rising; AI can personalize outreach at scale.",
+      "monetization": "Monthly subscription per user or per invoice volume, with tiered pricing for agencies of different sizes.",
+      "launch_difficulty": "Modéré – nécessite intégrations API, configuration d’email, mais pas de développement complexe de produit.",
+      "ai_automation_potential": "Élevé – IA personnalise le contenu, prédit la probabilité de paiement, optimise l’horaire des rappels.",
+      "demand_signals": [
+        "Post 5 highlights recurring headache of overdue invoice follow‑ups; many agencies likely share this pain"
+      ],
+      "risks": [
+        "Complexité d’intégration avec divers outils de facturation; concurrence avec QuickBooks, Xero, et des solutions de rappel existantes; adoption lente si l’outil est trop complexe"
+      ],
+      "validation_steps": [
+        "1. Enquêter auprès de 20 agences sur leurs processus de relance et mesurer le temps passé",
+        "2. Construire un prototype Zapier‑based qui envoie des rappels automatiques via Gmail",
+        "3. Offrir un essai gratuit à 10 agences et mesurer le temps économisé et le taux de paiement",
+        "4. Recueillir des témoignages et ajuster le produit"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 18,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 4,
+        "launch_ease": 6,
+        "ai_automation_potential": 8,
+        "total_score": 75,
+        "score_reasoning": "Le problème est coûteux et répandu (15/20). La demande est forte (18/20). Le modèle d’abonnement est crédible (12/15). Le marché des petites agences est suffisant (12/15). La concurrence est présente mais pas saturée (4/10). Le MVP est réalisable avec des intégrations existantes (6/10). L’IA offre un avantage significatif (8/10)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1wcyqvn/how_do_you_handle_overdue_invoice_followups/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1wcyqvn"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "ColdReach: AI‑Optimized Outreach for Startup Job Seekers",
+      "problem": "Software engineers seeking startup roles receive zero response to cold outreach emails and LinkedIn messages, wasting time and effort.",
+      "target_customer": "Software and iOS engineers looking for startup positions",
+      "opportunity": "An AI‑powered tool that crafts personalized outreach messages, suggests optimal timing, tracks responses, and integrates with LinkedIn and email platforms to improve response rates.",
+      "proposed_solution": "SaaS that uses NLP to analyze company profiles, generates tailored messages, schedules sends, and provides analytics on open/response rates; integrates via LinkedIn API and Gmail.",
+      "why_now": "Startup hiring is booming; many candidates rely on cold outreach; AI can significantly improve response rates and reduce time to interview.",
+      "monetization": "Subscription per user or per outreach volume, with a free tier for limited messages.",
+      "launch_difficulty": "Modéré à élevé – nécessite accès API LinkedIn, gestion de quotas, et développement d’interface utilisateur simple.",
+      "ai_automation_potential": "Très élevé – IA écrit les messages, prédit la probabilité de réponse, optimise l’horaire.",
+      "demand_signals": [
+        "Post 4 indicates zero response rates; many engineers likely face similar frustration"
+      ],
+      "risks": [
+        "Restrictions API LinkedIn; privacy concerns; adoption may be slow if users distrust AI‑generated messages"
+      ],
+      "validation_steps": [
+        "1. Enquêter auprès de 15 ingénieurs sur leurs expériences de relance",
+        "2. Créer un générateur de messages simple basé sur GPT‑3",
+        "3. Tester avec 5 envois réels et mesurer le taux de réponse",
+        "4. Recueillir feedback et itérer sur le produit"
+      ],
+      "scoring": {
+        "problem_intensity": 12,
+        "observable_demand": 15,
+        "monetization_potential": 10,
+        "market_size_niche": 10,
+        "competition_saturation": 3,
+        "launch_ease": 4,
+        "ai_automation_potential": 9,
+        "total_score": 63,
+        "score_reasoning": "Le problème est douloureux mais pas critique (12/20). La demande est forte (15/20). Le modèle d’abonnement est plausible (10/15). Le marché des ingénieurs est suffisant (10/15). La concurrence est faible (3/10). Le MVP est difficile mais réalisable (4/10). L’IA offre un avantage majeur (9/10)."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1wan40g/startup_founders_what_actually_makes_you_respond/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1wan40g"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "POV: Your ICP is niche, where do you find these people? [i will not promote]",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "POV: Your ICP is niche, where do you find these people? [i will not promote]",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Early-stage investors who still invest outside AI? “I will not promote”",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "I will not promote but im confused what my founder wants from me",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "paid launchpads suck i will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Looking for start-up lawyer (I will not promote)",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Z Fellows *I will not promote*",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Our biggest service contract is up for renewal and the client has gone quiet.",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "I Sold my Cleaning Business After 5 Years!",
+      "reason": "Story of exit, no actionable pain or problem identified",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "I’ve validated the product, but I’m stuck on what to do next",
+      "reason": "Vague description, no specific pain or demand signal",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
