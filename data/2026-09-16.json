@@ -1,0 +1,200 @@
+{
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T09:49:02.702985Z",
+  "posts_scraped_total": 174,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 74,
+    "r/smallbusiness": 50,
+    "r/startups": 50
+  },
+  "opportunities": [
+    {
+      "title": "AI‑Driven Sales Forecasting for B2B Pipelines",
+      "problem": "Inaccurate pipeline reports; can't trust numbers; deals close unexpectedly.",
+      "target_customer": "B2B sales teams using Salesforce or similar",
+      "opportunity": "Analytics platform that ingests pipeline data, applies machine learning to predict probability of close and adjust forecasts.",
+      "proposed_solution": "SaaS that connects to Salesforce, provides real‑time forecast dashboards.",
+      "why_now": "Salesforce adoption high; need better predictive analytics; AI maturity.",
+      "monetization": "Subscription per user or per account",
+      "launch_difficulty": "Modéré : SaaS en 1‑2 mois",
+      "ai_automation_potential": "Très élevé: ML models for probability",
+      "demand_signals": [
+        "Issues with pipeline accuracy in Post 8"
+      ],
+      "risks": [
+        "Data integration complexity, accuracy concerns, competition from existing forecasting tools"
+      ],
+      "validation_steps": [
+        "Survey 10 sales managers",
+        "Build prototype using sample data",
+        "Test accuracy vs manual forecasts"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 12,
+        "monetization_potential": 13,
+        "market_size_niche": 12,
+        "competition_saturation": 5,
+        "launch_ease": 6,
+        "ai_automation_potential": 9,
+        "total_score": 72,
+        "score_reasoning": "Very painful, clear demand, strong monetization, sizable market, low competition, moderate launch, high AI."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1weel43/how_do_you_forecast_when_the_deals_that_close/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1weel43"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Signal‑Triggered LinkedIn Outreach Automation",
+      "problem": "Outbound campaigns often mis‑timed; need to prioritize signals for better conversion.",
+      "target_customer": "SaaS founders, B2B marketers",
+      "opportunity": "Platform that monitors LinkedIn signals (profile changes, content engagement) and triggers outreach automatically.",
+      "proposed_solution": "Browser extension + backend that tracks signals and sends personalized messages.",
+      "why_now": "LinkedIn usage high; signal‑based outreach proven effective; automation demand.",
+      "monetization": "Monthly subscription per contact or per outreach volume",
+      "launch_difficulty": "Faible : No‑code prototype en 2 semaines",
+      "ai_automation_potential": "Moyen: AI for message personalization",
+      "demand_signals": [
+        "Performance data from Post 12 showing signal‑triggered campaigns outperform cold ones"
+      ],
+      "risks": [
+        "LinkedIn API limits, spam concerns, adoption"
+      ],
+      "validation_steps": [
+        "Interview 5 marketers",
+        "Build simple signal tracker",
+        "Run A/B test on outreach"
+      ],
+      "scoring": {
+        "problem_intensity": 10,
+        "observable_demand": 15,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 4,
+        "launch_ease": 8,
+        "ai_automation_potential": 7,
+        "total_score": 69,
+        "score_reasoning": "Moderate pain, high demand, good monetization, large market, low competition, easy launch, decent AI."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1w7h64u/signaltriggered_linkedin_outreach_campaigns/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1w7h64u"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "High-Touch B2B Follow-Up Automation",
+      "problem": "Prospects go silent after receiving initial work, making it hard to close deals for high-effort, low-volume studios.",
+      "target_customer": "Small B2B studios and consultancies with high-touch sales cycles",
+      "opportunity": "A lightweight CRM module that automates personalized follow-up sequences, tracks silence, and suggests next steps.",
+      "proposed_solution": "SaaS tool integrated with email and calendar, using AI to draft follow-ups based on prior interactions.",
+      "why_now": "Post‑pandemic shift to remote sales and increased use of email; existing CRMs lack tailored silence detection for high‑touch.",
+      "monetization": "Monthly subscription per user or per contact volume",
+      "launch_difficulty": "Modéré : SaaS complet en 1 mois",
+      "ai_automation_potential": "High: AI can generate follow‑up content and predict silence patterns",
+      "demand_signals": [
+        "Pattern of prospects going silent after RFI in Post 1"
+      ],
+      "risks": [
+        "Competition from existing CRMs, adoption resistance, data privacy"
+      ],
+      "validation_steps": [
+        "Interview 5 studios about follow‑up pain",
+        "Build a simple email template generator",
+        "Run pilot with 3 clients"
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 10,
+        "monetization_potential": 12,
+        "market_size_niche": 10,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 67,
+        "score_reasoning": "High pain, moderate demand, good monetization, niche but sizable, some competition, moderate launch, high AI."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wdliyd/how_do_you_handle_followups_when_a_prospect_goes/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wdliyd"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Anyone using a payment gateway with a real API for bulk payouts to contractors?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "📋 Entrepreneur Moderator Applications Open - Apply Now!",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 12, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Sunday Steam: Vent It or Roast It | September 06, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 05, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Meta just made WhatsApp Business setup talkable via Claude/Cursor/Codex — anyone actually using What",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Business owners — do you think formal education prepared you for running a business, or did you lear",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "How much time do you actually waste every month fixing payroll or multi-state tax errors?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "How do you manage an experienced employee who constantly tries to prove they know more than the manager?",
+      "reason": "No concrete pain point or actionable problem for a product",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Could we band together and start a new country?",
+      "reason": "Unrealistic and not a business problem",
+      "category": "Meme/Motivation"
+    },
+    {
+      "title_or_topic": "Execution is everything",
+      "reason": "Generic motivational post, no specific problem",
+      "category": "Meme/Motivation"
+    }
+  ]
+}
