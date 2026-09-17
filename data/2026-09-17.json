@@ -1,0 +1,211 @@
+{
+  "date": "2026-09-17",
+  "generated_at": "2026-09-17T09:56:06.156546Z",
+  "posts_scraped_total": 173,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 73,
+    "r/startups": 50,
+    "r/smallbusiness": 50
+  },
+  "opportunities": [
+    {
+      "title": "AI‑Powered Deal Forecasting Add‑on for Salesforce",
+      "problem": "Sales teams cannot reliably predict which opportunities will close, leading to inaccurate revenue forecasts even after moving to a CRM.",
+      "target_customer": "B2B sales organizations using Salesforce (10‑200 reps).",
+      "opportunity": "An AI layer that analyses pipeline data, activity logs and historical win rates to assign a probability score to each deal.",
+      "proposed_solution": "SaaS integration that pulls Salesforce data, runs a predictive model, and displays confidence scores in the pipeline view.",
+      "why_now": "Recent surge in AI/ML tooling and the shift to data‑driven sales make predictive forecasting a competitive advantage.",
+      "monetization": "Per‑user monthly subscription ($15‑$30) or revenue‑share model.",
+      "launch_difficulty": "Modéré : besoin de développer un connecteur Salesforce et entraîner un modèle ML (3‑4 mois).",
+      "ai_automation_potential": "L'IA est centrale : elle génère les scores de probabilité et propose des actions de suivi.",
+      "demand_signals": [
+        "« How do you forecast when the deals that close aren't the ones you thought would close? » (r/Entrepreneur)",
+        "Mention de la perte de confiance dans le chiffre du pipeline après migration vers Salesforce."
+      ],
+      "risks": [
+        "Accès aux données CRM sensibles.",
+        "Nécessité d'un volume de données suffisant pour entraîner le modèle.",
+        "Concurrence de solutions établies (Clari, InsightSquared)."
+      ],
+      "validation_steps": [
+        "Contacter 5 équipes sales utilisant Salesforce et proposer un audit gratuit de leurs prévisions.",
+        "Construire un tableau de bord mockup et mesurer l'intérêt via un questionnaire.",
+        "Lancer une landing page avec une offre de beta test et collecter 50 inscriptions."
+      ],
+      "scoring": {
+        "problem_intensity": 17,
+        "observable_demand": 15,
+        "monetization_potential": 13,
+        "market_size_niche": 14,
+        "competition_saturation": 5,
+        "launch_ease": 5,
+        "ai_automation_potential": 9,
+        "total_score": 78,
+        "score_reasoning": "Le problème est critique pour la planification financière, la demande est clairement exprimée, le modèle SaaS est viable, le marché est vaste, mais la concurrence est forte et le MVP nécessite du ML, ce qui augmente la difficulté de lancement."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1weel43/how_do_you_forecast_when_the_deals_that_close/"
+      ],
+      "source_subreddits": [
+        "Entrepreneur"
+      ],
+      "post_ids": [
+        "1weel43"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Automated Follow‑Up Sequencer for High‑Touch B2B Agencies",
+      "problem": "Agencies generate strong initial engagement (high open rates) but fail to convert leads into paying clients due to inconsistent follow‑up after prospects go silent.",
+      "target_customer": "Boutique B2B service agencies (video editing, design, consulting) with 1‑10 staff.",
+      "opportunity": "A lightweight CRM/automation tool that triggers personalized follow‑up emails, reminders, and signal‑based outreach cadences.",
+      "proposed_solution": "Web app integrating with Gmail/Outlook, offering template library, AI‑generated email suggestions, and analytics on response rates.",
+      "why_now": "Growth of remote work and niche agencies increases reliance on email outreach; existing CRMs are either too generic or too expensive for micro‑agencies.",
+      "monetization": "Freemium model – free up to 100 contacts, paid plans $19‑$49/mo for unlimited contacts and AI features.",
+      "launch_difficulty": "Faible à modéré : utilisation d'API d'email et d'un moteur de génération de texte (OpenAI) pour MVP en 4‑6 semaines.",
+      "ai_automation_potential": "L'IA génère le contenu des relances et ajuste le timing selon les signaux du prospect.",
+      "demand_signals": [
+        "« 496 highly targeted leads, 35 replies, 7 positive, 1 client. Am I doing Something wrong? » (r/Entrepreneur)",
+        "« How do you handle follow‑ups when a prospect goes silent after you've done a lot of work for them? » (r/Entrepreneur)"
+      ],
+      "risks": [
+        "Saturation des outils d'email automation (Mailshake, Lemlist).",
+        "Dépendance aux politiques anti‑spam des fournisseurs d'email.",
+        "Adoption limitée si les agences préfèrent les CRM existants."
+      ],
+      "validation_steps": [
+        "Interview 12 agence B2B sur leurs processus de suivi et leurs points de friction.",
+        "Construire une landing page avec une vidéo de démonstration et mesurer le taux de conversion (objectif 5 %).",
+        "Lancer une campagne d'email ciblée vers 30 agences et recueillir les retours sur le prototype."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 18,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 78,
+        "score_reasoning": "Le problème est répété et impacte le chiffre d'affaires, la demande est très visible dans les posts, le modèle SaaS est crédible, le marché des micro‑agences est important, la concurrence existe mais le positionnement niche reste viable, le MVP est réalisable rapidement, et l'IA ajoute une différenciation."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wan3rl/496_highly_targeted_leads_35_replies_7_positive_1/",
+        "https://www.reddit.com/r/Entrepreneur/comments/1wdliyd/how_do_you_handle_followups_when_a_prospect_goes/"
+      ],
+      "source_subreddits": [
+        "Entrepreneur"
+      ],
+      "post_ids": [
+        "1wan3rl",
+        "1wdliyd"
+      ],
+      "signal_count": 2
+    },
+    {
+      "title": "Dynamic Estimation & Quotation SaaS for Project‑Based SMBs",
+      "problem": "Small business owners handling custom projects struggle with manual, error‑prone estimates that involve dozens of line items, variable quantities, and fluctuating material prices.",
+      "target_customer": "Project‑based small businesses (construction, custom fabrication, interior design, etc.) with 1‑20 employees.",
+      "opportunity": "A cloud‑based estimation platform that auto‑calculates totals, updates prices via API feeds, and generates professional quotes in minutes.",
+      "proposed_solution": "Web app with configurable templates, price‑feed integrations, and AI‑assisted line‑item suggestions.",
+      "why_now": "Rising material cost volatility and increased adoption of cloud tools make real‑time pricing essential; existing quoting tools are either too generic or too expensive for micro‑SMBs.",
+      "monetization": "Tiered SaaS subscription (e.g., $29/mo for basic, $79/mo for premium with API integrations).",
+      "launch_difficulty": "Faible : No‑code MVP with Airtable + Softr in 2 weeks, then add AI pricing module.",
+      "ai_automation_potential": "L'IA peut suggérer line‑items, ajuster prix en fonction de historiques et prévoir marges.",
+      "demand_signals": [
+        "« How do you manage estimates and quotations when every project is different? » (r/smallbusiness)",
+        "Mention of \"dozens or hundreds of line items\" and \"changing material/component prices\"."
+      ],
+      "risks": [
+        "Intégration avec multiples fournisseurs de prix.",
+        "Adoption lente si les utilisateurs sont habitués à Excel.",
+        "Concurrence de solutions établies comme QuoteWerks."
+      ],
+      "validation_steps": [
+        "Interview 10‑15 propriétaires d'entreprises de construction/fabrication sur leurs processus d'estimation.",
+        "Créer une landing page décrivant le produit et collecter 100 emails d'intérêt.",
+        "Construire un prototype de 5 lignes d'estimation et le tester avec 3 clients pilotes."
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 14,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 7,
+        "launch_ease": 8,
+        "ai_automation_potential": 7,
+        "total_score": 77,
+        "score_reasoning": "Le problème est clairement douloureux et répété, la demande observable est modérée, le modèle SaaS est crédible, le marché est large, la concurrence n'est pas saturée pour les micro‑SMB, le MVP est simple à lancer, et l'IA apporte une vraie valeur ajoutée."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1winb9p/small_business_owners_how_do_you_manage_estimates/"
+      ],
+      "source_subreddits": [
+        "smallbusiness"
+      ],
+      "post_ids": [
+        "1winb9p"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Thankful Thursday: Free Resources and Tools | September 17, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Anyone using a payment gateway with a real API for bulk payouts to contractors?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "📋 Entrepreneur Moderator Applications Open - Apply Now!",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 12, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Sunday Steam: Vent It or Roast It | September 06, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 05, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Returning Vested Equity (I will not promote)",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Leaving well as a partner? I will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Seeking $50k investor for RCFE homes",
+      "reason": "Post is about fundraising structure, not a concrete problem that can be solved with a product or service.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Could we band together and start a new country?",
+      "reason": "Idea is speculative, unrealistic and not grounded in a solvable business problem.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Student white‑label business model",
+      "reason": "Describes a generic business plan without a clear pain point; lacks evidence of market frustration.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
