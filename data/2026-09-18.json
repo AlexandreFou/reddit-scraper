@@ -1,0 +1,251 @@
+{
+  "date": "2026-09-18",
+  "generated_at": "2026-09-18T09:33:51.143721Z",
+  "posts_scraped_total": 164,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 64,
+    "r/smallbusiness": 50,
+    "r/startups": 50
+  },
+  "opportunities": [
+    {
+      "title": "Sales‑Team Insight Capture & Knowledge Base",
+      "problem": "Companies fail to capture and reuse the market intelligence gathered daily by sales reps, leading to duplicated effort and missed product improvements.",
+      "target_customer": "Mid‑size B2B companies with active sales teams that lack a systematic way to record objections, buyer language, and success stories.",
+      "opportunity": "A lightweight SaaS that lets reps log insights in real time, tags them, and surfaces searchable knowledge to product, marketing, and leadership.",
+      "proposed_solution": "Browser extension / mobile app for quick entry, NLP tagging, and a central dashboard with analytics and export to CRM.",
+      "why_now": "Advances in low‑latency NLP and growing awareness of data‑driven sales make automated insight capture practical and valuable.",
+      "monetization": "Per‑user monthly subscription ($15‑$30/user) with an enterprise tier for analytics.",
+      "launch_difficulty": "Faible : No‑code backend (Airtable/Retool) + Chrome extension template can be built in 3 weeks.",
+      "ai_automation_potential": "Élevé : AI can auto‑categorize entries, suggest similar past insights, and generate summary reports.",
+      "demand_signals": [
+        "Post states companies underuse sales team learning",
+        "Mentions repeated objections and buyer language not being recorded"
+      ],
+      "risks": [
+        "Adoption friction if entry is perceived as extra work",
+        "Data privacy concerns when syncing with CRM"
+      ],
+      "validation_steps": [
+        "Survey 15 sales managers about current insight capture methods",
+        "Build a mockup and run a 5‑day usability test with 3 reps",
+        "Offer a free beta to a small team and measure logged insights per week"
+      ],
+      "scoring": {
+        "problem_intensity": 18,
+        "observable_demand": 15,
+        "monetization_potential": 13,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 7,
+        "ai_automation_potential": 9,
+        "total_score": 80,
+        "score_reasoning": "Pain is high and directly impacts revenue. The post reflects a clear, widespread need. Monetization via per‑user SaaS is proven. Competition exists but is focused on call recording, leaving a gap. AI adds strong differentiation, and an MVP is quick to build."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wisr9e/do_most_companies_waste_what_their_sales_team_is/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wisr9e"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "AI‑Powered Deal Forecasting Add‑on for Salesforce",
+      "problem": "Sales leaders lose visibility because pipeline forecasts are inaccurate; deals that appear likely to close often fall through, causing revenue volatility.",
+      "target_customer": "SMB to mid‑market B2B companies using Salesforce for pipeline management.",
+      "opportunity": "An AI add‑on that analyses activity data, email sentiment, and historical win rates to assign a confidence score to each opportunity.",
+      "proposed_solution": "Embedded Salesforce Lightning component that surfaces a dynamic confidence % and recommends next actions, with a simple dashboard for executives.",
+      "why_now": "Recent breakthroughs in predictive analytics and the availability of Salesforce’s OpenAI integration make accurate, low‑code forecasting viable.",
+      "monetization": "Monthly per‑user fee ($30/user) or per‑seat license, with a free tier for up to 5 opportunities.",
+      "launch_difficulty": "Modéré : Requires Salesforce AppExchange certification and integration with OpenAI API; achievable in 8‑10 weeks by a small dev team.",
+      "ai_automation_potential": "Élevé : Predictive modeling and sentiment analysis automate confidence scoring.",
+      "demand_signals": [
+        "Post describes blind spots in forecasting despite using Salesforce",
+        "Expresses lack of trust in pipeline numbers"
+      ],
+      "risks": [
+        "Data quality in CRM may limit model accuracy",
+        "AppExchange approval timeline"
+      ],
+      "validation_steps": [
+        "Collect anonymized pipeline data from 5 Salesforce users",
+        "Build a prototype scoring model and compare against actual outcomes",
+        "Run a 2‑month pilot with a sales team and track forecast error reduction"
+      ],
+      "scoring": {
+        "problem_intensity": 17,
+        "observable_demand": 14,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 6,
+        "ai_automation_potential": 9,
+        "total_score": 76,
+        "score_reasoning": "Forecast errors directly hit revenue, making the pain acute. The post shows explicit demand. Monetization via SaaS is credible. Competition exists but few focus on AI‑driven confidence scores. Development is moderate due to Salesforce constraints, while AI adds high value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1weel43/how_do_you_forecast_when_the_deals_that_close/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1weel43"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Automated Follow‑up & Escrow Platform for Service‑Based Studios",
+      "problem": "Studios delivering high‑effort visualisation work lose contracts when prospects go silent after substantial unpaid effort, leading to cash‑flow gaps and wasted time.",
+      "target_customer": "Small‑to‑medium creative studios (e.g., 3D visualisation, VR training) that bill per project and face silent prospects.",
+      "opportunity": "A SaaS that automates polite follow‑up sequences, tracks deliverable milestones, and holds client payments in escrow until acceptance.",
+      "proposed_solution": "Web app with customizable email/WhatsApp follow‑up templates, milestone‑based escrow integration (Stripe/PayPal), and a dashboard showing prospect engagement.",
+      "why_now": "Increasing adoption of online payment escrow services and AI‑generated communication tools make automated, trust‑building follow‑ups feasible and cost‑effective.",
+      "monetization": "Monthly subscription tiered by number of active projects (e.g., $49‑$199/mo) plus a 1 % escrow transaction fee.",
+      "launch_difficulty": "Modéré : No‑code workflow (Zapier, Make) for email automation + Stripe Connect integration can be built in 4‑6 weeks by a solo founder.",
+      "ai_automation_potential": "Léger : AI can draft personalized follow‑up messages and suggest optimal timing.",
+      "demand_signals": [
+        "Post mentions prospect going silent after a lot of work",
+        "Concern about losing contracts due to lack of follow‑up"
+      ],
+      "risks": [
+        "Clients may resist escrow for small contracts",
+        "Legal compliance for holding funds in different jurisdictions"
+      ],
+      "validation_steps": [
+        "Interview 10 studio owners about follow‑up pain and escrow willingness",
+        "Create a landing page with pricing and capture email sign‑ups",
+        "Run a 2‑week pilot using a no‑code workflow with 2‑3 studios"
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 12,
+        "monetization_potential": 12,
+        "market_size_niche": 10,
+        "competition_saturation": 7,
+        "launch_ease": 8,
+        "ai_automation_potential": 7,
+        "total_score": 72,
+        "score_reasoning": "The problem is costly and recurring (high intensity). The post shows clear demand, but the market is niche. Monetization via SaaS + transaction fee is credible. Competition is limited, and a no‑code MVP is feasible. AI adds modest value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wdliyd/how_do_you_handle_followups_when_a_prospect_goes/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wdliyd"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Digital Visitor & Contractor Management for Industrial Plants",
+      "problem": "Industrial sites still rely on paper logbooks or basic spreadsheets to track third‑party access, causing security risks, compliance headaches, and administrative overhead.",
+      "target_customer": "Industrial plant operators and facility managers in Latin America and emerging markets.",
+      "opportunity": "A cloud‑based SaaS that lets contractors pre‑register, generates QR badges, logs entry/exit via mobile scanners, and exports compliance reports.",
+      "proposed_solution": "Web portal for admin, mobile app for gate staff, optional integration with existing ERP via API, and automated report generation.",
+      "why_now": "Smartphone penetration and cheap IoT scanners make digital check‑in affordable; regulatory pressure for traceability is increasing.",
+      "monetization": "Subscription per site ($150‑$500/mo) plus optional per‑scan fee for high‑volume plants.",
+      "launch_difficulty": "Modéré : Requires basic mobile app and API; can be MVP’d with existing QR libraries in 6‑8 weeks.",
+      "ai_automation_potential": "Modéré : AI can flag anomalous access patterns and suggest risk scores.",
+      "demand_signals": [
+        "Post describes current reliance on paper logbooks and spreadsheets",
+        "Mentions need for digitization of third‑party access"
+      ],
+      "risks": [
+        "Resistance from security staff used to paper processes",
+        "Integration challenges with legacy ERP systems"
+      ],
+      "validation_steps": [
+        "Interview 8 plant managers about current visitor tracking pain points",
+        "Prototype a QR‑badge generator and test with a pilot site for 2 weeks",
+        "Measure time saved and compliance improvement"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 13,
+        "monetization_potential": 12,
+        "market_size_niche": 11,
+        "competition_saturation": 5,
+        "launch_ease": 5,
+        "ai_automation_potential": 5,
+        "total_score": 66,
+        "score_reasoning": "The problem is tangible and costly, with clear demand expressed. Market is sizable but has existing players, lowering differentiation. Monetization is straightforward. MVP is feasible but needs hardware integration, raising launch effort. AI adds modest benefit."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1wj0zr0/one_year_two_enterprise_clients_zero_marketing/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1wj0zr0"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "UK SME owners: what's stopping you from hiring remotely overseas?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Will build you a website and design",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Buying a 5 locations on Carl’s jr",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "What is the most valuable business call you've ever had?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Looking for a Bank/ATM for Commercial Space",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "How did you get your first wholesale customers? For piercing/jewelry",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Looking for book recommendations",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "I built an invoicing app for small businesses- what would make you switch from yours?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Stop using AI to make your flyers and social posts",
+      "reason": "Post is an opinion rant without a concrete problem that can be solved with a product; no actionable pain point identified.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Could we band together and start a new country?",
+      "reason": "Speculative, non‑business idea; lacks feasibility and market relevance.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Think I could find an investor to give me 50k for this?",
+      "reason": "Post seeks personal financing advice rather than describing a repeatable market pain; not a product opportunity.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
