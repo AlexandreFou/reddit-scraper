@@ -1,0 +1,200 @@
+{
+  "date": "2026-09-19",
+  "generated_at": "2026-09-19T09:20:10.670911Z",
+  "posts_scraped_total": 179,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 100,
+    "r/startups": 50,
+    "r/smallbusiness": 29
+  },
+  "opportunities": [
+    {
+      "title": "AI‑Driven Sales Forecasting Tool",
+      "problem": "Inaccurate pipeline forecasts lead to misallocated resources and missed revenue targets.",
+      "target_customer": "SaaS companies with sales pipelines in Salesforce, HubSpot, or similar platforms.",
+      "opportunity": "A SaaS that integrates with existing CRMs, uses historical data and AI to predict deal closure probability and adjust forecasts dynamically.",
+      "proposed_solution": "CRM integration, AI model for probability scoring, real‑time forecast dashboards, alerts for low‑confidence deals.",
+      "why_now": "Many companies struggle with forecasting; AI can improve accuracy and reduce guesswork.",
+      "monetization": "Monthly subscription per user ($25‑$50) or per pipeline size.",
+      "launch_difficulty": "Modéré – nécessite intégration CRM, modèle ML de base et dashboard.",
+      "ai_automation_potential": "Haute – AI predicts probabilities, adjusts forecasts, and identifies patterns.",
+      "demand_signals": [
+        "Post 15: \"How do you forecast when the deals that close aren't the ones you thought would close?\""
+      ],
+      "risks": [
+        "Data integration challenges, model accuracy, user trust in AI predictions"
+      ],
+      "validation_steps": [
+        "Interview 10 sales ops managers about forecasting pain.",
+        "Build a simple predictive model using historical data and test with 1 pilot company.",
+        "Collect feedback on forecast accuracy and usability."
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 18,
+        "monetization_potential": 14,
+        "market_size_niche": 14,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 9,
+        "total_score": 84,
+        "score_reasoning": "Pain is high and widespread. Demand signals are strong. B2B SaaS model is credible. Market size is sizable. Competition moderate. Launch is feasible. AI offers significant value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1weel43/how_do_you_forecast_when_the_deals_that_close/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1weel43"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Follow‑Up Automation for High‑Value B2B",
+      "problem": "High‑effort, low‑volume B2B studios lose revenue when prospects go silent after initial work.",
+      "target_customer": "Small B2B studios and consulting firms that land 3‑10 high‑value contracts per year.",
+      "opportunity": "A lightweight SaaS that automates follow‑up sequences, tracks engagement, and flags silent prospects, using AI to suggest timing and content.",
+      "proposed_solution": "Email‑calendar integration plugin with AI‑generated follow‑up templates, engagement analytics, and priority alerts.",
+      "why_now": "Remote B2B sales are increasingly email‑centric; studios need efficient, low‑friction follow‑up to protect margins.",
+      "monetization": "Monthly subscription per user ($30‑$50) or per lead.",
+      "launch_difficulty": "Modéré – nécessite intégration email, API de calendrier et un moteur de génération de texte simple.",
+      "ai_automation_potential": "Haute – IA génère contenu, prédit engagement et priorise prospects.",
+      "demand_signals": [
+        "Post 2: \"How do you handle follow‑ups when a prospect goes silent after you've done a lot of work for them?\""
+      ],
+      "risks": [
+        "Adoption resistance from sales teams, integration complexity with existing tools"
+      ],
+      "validation_steps": [
+        "Interview 10 B2B studios about follow‑up pain points.",
+        "Build a simple email reminder script and test with 2 pilot clients.",
+        "Collect feedback and iterate on AI suggestions."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 18,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 9,
+        "total_score": 79,
+        "score_reasoning": "Pain is high and recurring; many studios express need for follow‑up tools. Demand signals are strong. B2B SaaS model is credible. Market is niche but sizable. Competition is moderate. Launch is feasible with no‑code tools. AI adds significant value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wdliyd/how_do_you_handle_followups_when_a_prospect_goes/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wdliyd"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Sales Insight Capture Platform",
+      "problem": "Companies underutilize sales team insights, missing market research opportunities.",
+      "target_customer": "Mid‑size companies with active sales teams (10‑50 reps).",
+      "opportunity": "A SaaS that records sales calls, uses NLP to tag objections and buyer language, and feeds insights into product roadmaps.",
+      "proposed_solution": "Call recording integration, AI‑driven objection tagging, knowledge base, CRM sync.",
+      "why_now": "Remote sales and data‑driven product decisions demand structured insights; existing tools lack focused capture.",
+      "monetization": "Subscription per rep ($20‑$40) or per call volume.",
+      "launch_difficulty": "Modéré – nécessite API de CRM, traitement audio et NLP de base.",
+      "ai_automation_potential": "Haute – NLP extracts objections, buyer language, and sentiment.",
+      "demand_signals": [
+        "Post 10: \"Do most companies waste what their sales team is learning?\""
+      ],
+      "risks": [
+        "Privacy concerns, data security, accuracy of NLP tagging"
+      ],
+      "validation_steps": [
+        "Survey 15 sales managers on pain and willingness to adopt.",
+        "Build prototype call tagging and test with 1 company pilot.",
+        "Iterate based on feedback and accuracy metrics."
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 17,
+        "monetization_potential": 13,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 6,
+        "ai_automation_potential": 8,
+        "total_score": 76,
+        "score_reasoning": "Pain is significant; many managers express frustration. Demand signals are clear. B2B SaaS model is credible. Market size is moderate. Competition is low in niche. Launch requires moderate effort. AI provides strong differentiation."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wisr9e/do_most_companies_waste_what_their_sales_team_is/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wisr9e"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "got a bit of free time today and feel like talking business",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 19, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Thankful Thursday: Free Resources and Tools | September 17, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Anyone using a payment gateway with a real API for bulk payouts to contractors?",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "📋 Entrepreneur Moderator Applications Open - Apply Now!",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Success Saturday: What's Going Right | September 12, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Where did you find a trusted human virtual assistant? I will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Leaving well as a partner? I will not promote",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "RCFE Licensing Capital Structure",
+      "reason": "No clear actionable problem; focus is on licensing paperwork, not a product opportunity",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Cleaning Business Exit",
+      "reason": "Post describes exit, not a pain point or need for a solution",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "New Country Startup",
+      "reason": "Speculative and unrelated to a real business pain",
+      "category": "Spam/Promo"
+    }
+  ]
+}
