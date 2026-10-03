@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-03",
+  "generated_at": "2026-10-03T10:20:56.227320Z",
+  "posts_scraped_total": 691,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 591,
+    "r/smallbusiness": 50,
+    "r/startups": 50
+  },
+  "opportunities": [
+    {
+      "title": "Guided Entrepreneurship Onboarding Platform",
+      "problem": "Aspiring entrepreneurs have time, money and motivation but lack a clear, step‑by‑step roadmap to launch a viable business, leading to wasted effort and paralysis.",
+      "target_customer": "Individuals ready to start a business who have resources but no idea where to begin (e.g., Reddit users like the poster in r/Entrepreneur post ID 1wrrmw5)",
+      "opportunity": "A SaaS platform that delivers a personalized curriculum, mentorship matching, and actionable checklists to turn motivation into a concrete launch plan.",
+      "proposed_solution": "Web app with AI‑driven pathway generation, video lessons, template library, and optional mentor marketplace; users progress through milestones and receive feedback.",
+      "why_now": "Rise of remote work, gig economy and low‑cost startup tools has increased the pool of potential founders, while existing education is fragmented and often generic.",
+      "monetization": "Monthly subscription tier (e.g., $29/mo) with premium mentorship add‑on; enterprise B2B licensing for incubators/accelerators.",
+      "launch_difficulty": "Modéré : No‑code MVP with core curriculum and AI recommendation engine can be built in 4‑6 weeks by a solo founder.",
+      "ai_automation_potential": "L'IA génère des plans d'action personnalisés à partir des réponses de l'utilisateur et propose des ressources pertinentes, réduisant le besoin de conseil manuel.",
+      "demand_signals": [
+        "\"I have the time, money, and hunger to become an entrepreneur, but I have no idea where to start..\" (r/Entrepreneur, post 1wrrmw5)"
+      ],
+      "risks": [
+        "Content relevance must stay up‑to‑date; users may prefer free content; mentor quality control."
+      ],
+      "validation_steps": [
+        "Interview 10 aspiring founders about their biggest knowledge gaps",
+        "Create a landing page with a free 5‑step roadmap and capture email sign‑ups",
+        "Run a 2‑week paid pilot with 5 mentors to test willingness to pay"
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 18,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 80,
+        "score_reasoning": "Strong pain and visible demand (high upvotes/comments); sizable market of novice founders; clear monetisation path; moderate competition from courses; AI adds differentiation; MVP feasible with no‑code."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wrrmw5/i_have_the_time_money_and_hunger_to_become_an/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wrrmw5"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Seller‑Financed Small Business Acquisition Marketplace",
+      "problem": "Prospective buyers of struggling small businesses (e.g., pizza shops) struggle to find seller‑financed deals and lack a trusted platform to negotiate terms, risking missed opportunities and legal pitfalls.",
+      "target_customer": "Entrepreneurs looking to acquire low‑cost, under‑performing retail or service businesses that require seller financing (e.g., poster in r/Entrepreneur post ID 1wsovjg)",
+      "opportunity": "A niche marketplace that lists seller‑financed acquisition opportunities, provides standardized term templates, and facilitates due‑diligence communication.",
+      "proposed_solution": "Web platform where sellers post businesses with financing options; AI matches buyers based on criteria, auto‑generates term sheets, and offers escrow services.",
+      "why_now": "Increasing interest in low‑capital entrepreneurship and tighter bank lending make seller financing more attractive; current platforms lack dedicated financing focus.",
+      "monetization": "Success‑fee of 2‑3% of transaction value plus optional premium listing fees for sellers.",
+      "launch_difficulty": "Modéré : Requires legal templates and escrow integration; MVP can launch with manual verification of listings in 8‑10 weeks.",
+      "ai_automation_potential": "AI matches buyer criteria, predicts deal success probability, and drafts term sheets, reducing manual effort.",
+      "demand_signals": [
+        "\"Think It's Possible To Buy A Pizza Shop On Seller Finance?\" (r/Entrepreneur, post 1wsovjg)"
+      ],
+      "risks": [
+        "Regulatory compliance for financing; need for trust signals; limited initial inventory of listings."
+      ],
+      "validation_steps": [
+        "Survey 15 small‑business owners about interest in seller‑financed purchases",
+        "Compile 5 pilot listings from local sellers and gauge buyer interest",
+        "Run a landing‑page pre‑order campaign offering discounted success‑fee for early adopters"
+      ],
+      "scoring": {
+        "problem_intensity": 17,
+        "observable_demand": 12,
+        "monetization_potential": 13,
+        "market_size_niche": 12,
+        "competition_saturation": 5,
+        "launch_ease": 5,
+        "ai_automation_potential": 7,
+        "total_score": 71,
+        "score_reasoning": "High financial pain and clear niche demand; moderate observable demand; strong monetisation via transaction fees; market size moderate; competition low but regulatory risk; MVP feasible with manual processes."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1wsovjg/think_its_possible_to_buy_a_pizza_shop_on_seller/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1wsovjg"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Partner Conflict Management SaaS for Small Businesses",
+      "problem": "Small‑business owners often face partners who behave unprofessionally, leading to loss of focus, financial drain, and potential legal disputes, with no simple tool to document expectations or mediate conflicts.",
+      "target_customer": "Owners of small enterprises (e.g., gas stations, retail stores) who have equity partners or co‑founders exhibiting disruptive behavior (e.g., poster in r/smallbusiness post ID 1wwgewv)",
+      "opportunity": "A lightweight SaaS that provides partnership agreements, performance dashboards, and structured mediation workflows to prevent and resolve conflicts early.",
+      "proposed_solution": "Web app offering customizable partnership contracts, KPI tracking, automated alerts for breaches, and a mediated chat/issue‑tracking module; integrates with accounting tools.",
+      "why_now": "Growth of micro‑entrepreneurship and remote co‑ownership increases the likelihood of partnership friction; existing legal services are costly and slow.",
+      "monetization": "Tiered subscription ($19/mo for basic, $49/mo for advanced analytics and legal‑review add‑on).",
+      "launch_difficulty": "Faible : Core contract templates and KPI dashboard can be built with no‑code in 3‑4 weeks; optional legal review later.",
+      "ai_automation_potential": "AI analyses communication patterns to flag potential conflicts and suggests resolution steps, reducing need for external mediators.",
+      "demand_signals": [
+        "\"How do you handle a Business Partner who acts like a dick most of the time\" (r/smallbusiness, post 1wwgewv)"
+      ],
+      "risks": [
+        "Adoption resistance due to trust issues; legal liability for advice; need for jurisdiction‑specific templates."
+      ],
+      "validation_steps": [
+        "Conduct 10 interviews with small‑business owners about partnership pain points",
+        "Create a one‑page partnership agreement template and measure download conversion",
+        "Run a 30‑day pilot with 3 owners using the KPI alert feature"
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 10,
+        "monetization_potential": 11,
+        "market_size_niche": 11,
+        "competition_saturation": 8,
+        "launch_ease": 8,
+        "ai_automation_potential": 7,
+        "total_score": 70,
+        "score_reasoning": "Clear pain and niche demand; moderate observable demand; decent monetisation; low competition; easy MVP; AI adds value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1wwgewv/how_do_you_handle_a_business_partner_who_acts/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1wwgewv"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Commission‑only salespeople success query",
+      "reason": "Post lacks concrete pain points or measurable impact; merely asks for anecdotal success stories without quantifiable loss or cost.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Quit high‑paying finance job to build real‑estate platform",
+      "reason": "Narrative about personal career change without expressing a specific business problem that can be solved by a product or service.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Feedback Friday thread (generic request for feedback)",
+      "reason": "Generic community thread; no distinct problem or frustration expressed that translates into an entrepreneurial opportunity.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
