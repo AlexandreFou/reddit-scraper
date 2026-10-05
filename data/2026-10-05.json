@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-05",
+  "generated_at": "2026-10-05T12:12:22.098820Z",
+  "posts_scraped_total": 675,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/startups": 50,
+    "r/Entrepreneur": 575,
+    "r/smallbusiness": 50
+  },
+  "opportunities": [
+    {
+      "title": "Unified SaaS Subscription Management for SMBs",
+      "problem": "SMBs pay for 23 separate software subscriptions, leading to complexity and high costs.",
+      "target_customer": "SMBs with 5-50 employees using multiple SaaS tools",
+      "opportunity": "SaaS platform that aggregates subscriptions, provides cost analysis, consolidates billing, and recommends bundled solutions.",
+      "proposed_solution": "Dashboard to import subscription data, analyze spend, suggest consolidation, and automate renewal reminders.",
+      "why_now": "SMBs overwhelmed by SaaS proliferation and need cost control solutions.",
+      "monetization": "Monthly subscription fee plus revenue share on savings achieved.",
+      "launch_difficulty": "Modéré : MVP in 2-3 months, requires API integrations with major SaaS providers.",
+      "ai_automation_potential": "Élevé : analyse automatisée des dépenses, recommandations de consolidation, optimisation des coûts.",
+      "demand_signals": [
+        "SMBs paying 23 subscriptions, need consolidation."
+      ],
+      "risks": [
+        "Integration complexity with many SaaS, data privacy concerns."
+      ],
+      "validation_steps": [
+        "Survey 20 SMB owners about subscription pain points.",
+        "Build prototype to import subscription data from a few providers.",
+        "Pilot with 3 SMBs to measure cost savings."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 14,
+        "monetization_potential": 12,
+        "market_size_niche": 13,
+        "competition_saturation": 4,
+        "launch_ease": 6,
+        "ai_automation_potential": 8,
+        "total_score": 72,
+        "score_reasoning": "High pain, strong demand, good monetization, moderate competition."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1s5i577/the_saas_model_is_quietly_falling_apart_for_small/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1s5i577"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Consignment Inventory & Incentive Platform for Auto Service Retailers",
+      "problem": "Small brands struggle to partner with car washes/auto shops, track consignment inventory, and motivate staff.",
+      "target_customer": "Car wash and auto shop owners, small product brands",
+      "opportunity": "SaaS platform to manage consignment inventory, sales tracking, and staff incentive programs.",
+      "proposed_solution": "Digital consignment management system with inventory tracking, sales analytics, and automated incentive payouts.",
+      "why_now": "Increasing demand for offline retail partnerships and need for digital tracking solutions.",
+      "monetization": "Subscription per retailer or per brand, tiered pricing based on number of SKUs.",
+      "launch_difficulty": "Modéré : SaaS MVP in 1-2 months, no heavy integration required.",
+      "ai_automation_potential": "Moyen : automatisation de la prévision d'inventaire et optimisation des incitations.",
+      "demand_signals": [
+        "OP states need to scale offline distribution, track consignment inventory, motivate staff."
+      ],
+      "risks": [
+        "Adoption resistance from retailers, integration with existing POS systems."
+      ],
+      "validation_steps": [
+        "Interview 10 car wash owners about consignment pain points.",
+        "Create landing page and capture emails of interested brands.",
+        "Pilot manual consignment tracking with 2 partners."
+      ],
+      "scoring": {
+        "problem_intensity": 12,
+        "observable_demand": 8,
+        "monetization_potential": 10,
+        "market_size_niche": 10,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 5,
+        "total_score": 58,
+        "score_reasoning": "Moderate pain, limited demand signals, but B2B SaaS model with niche market."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1wy2ad6/how_to_partner_with_car_washesauto_shops_to_sell/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1wy2ad6"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Looking for tips to raise Series A if you're bootstrapped.",
+      "reason": "No actionable product problem, generic advice.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Growing into a CTO role?",
+      "reason": "Personal career advice, not a product problem.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Two-sided marketplace at Antler: we built supply first and have zero demand.",
+      "reason": "Not a clear problem, more a startup strategy question.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
