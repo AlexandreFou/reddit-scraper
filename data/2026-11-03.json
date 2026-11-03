@@ -1,0 +1,249 @@
+{
+  "date": "2026-11-03",
+  "generated_at": "2026-11-03T12:49:43.868356Z",
+  "posts_scraped_total": 1085,
+  "posts_after_filtering": 30,
+  "posts_sent_to_llm": 30,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 905,
+    "r/smallbusiness": 90,
+    "r/startups": 90
+  },
+  "opportunities": [
+    {
+      "title": "Automated Lead‑Response & Triage SaaS for Small Businesses",
+      "problem": "Small businesses receive more inbound enquiries than they can answer, leading to missed opportunities and lost revenue.",
+      "target_customer": "Local SMBs (retail, services) that get phone/email/web leads",
+      "opportunity": "Provide an AI‑driven system that instantly acknowledges each lead, categorises urgency, and routes it to the right staff or schedules a follow‑up.",
+      "proposed_solution": "Cloud service that connects to email, web forms, and phone‑to‑text, sends a personalized auto‑reply, and uses NLP to tag lead quality for a dashboard.",
+      "why_now": "Explosion des canaux d’acquisition (ads, referrals) crée un volume de leads que les petites équipes ne peuvent plus gérer manuellement.",
+      "monetization": "Abonnement mensuel basé sur nombre de leads traités (ex. $49 / mo jusqu’à 500 leads).",
+      "launch_difficulty": "Modéré : intégrations email/web simples, IA pré‑entraînée disponible via OpenAI, MVP en 4‑5 semaines.",
+      "ai_automation_potential": "Élevé : NLP pour classification et génération de réponses personnalisées.",
+      "demand_signals": [
+        "“Ads and referrals bring enquiries, and then there’s no time or team to answer them all.”",
+        "“How do you handle it? Does every enquiry get answered the same day, or do some slip through?”"
+      ],
+      "risks": [
+        "Fausse classification peut entraîner perte de leads de haute valeur",
+        "Conformité GDPR pour stockage des données de contact"
+      ],
+      "validation_steps": [
+        "Interview 12 local business owners sur leurs processus de suivi des leads",
+        "Créer une landing page avec offre de test gratuit 30 jours et mesurer le taux d’inscription",
+        "Déployer un script d’auto‑réponse sur un compte Gmail test et mesurer le temps moyen de réponse avant/après"
+      ],
+      "scoring": {
+        "problem_intensity": 18,
+        "observable_demand": 15,
+        "monetization_potential": 14,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 7,
+        "ai_automation_potential": 9,
+        "total_score": 81,
+        "score_reasoning": "Le problème est très douloureux (perte de revenus), la demande est clairement exprimée, le modèle SaaS est très monétisable, le marché SMB est vaste, la concurrence existe mais reste fragmentée, le MVP est réalisable rapidement, l’IA apporte une forte valeur d’automatisation."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1xlkern/is_getting_leads_still_the_hard_part_or_is_it/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1xlkern"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Team‑wide AI Code‑Assistant Knowledge Base",
+      "problem": "AI coding assistants (Claude Code / Codex) store notes locally, causing knowledge silos and duplicated effort across a development team.",
+      "target_customer": "Software development teams using AI code assistants",
+      "opportunity": "Build a shared repository that syncs AI‑generated notes, snippets, and warnings across all team members, searchable and versioned.",
+      "proposed_solution": "Plugin/extension that captures AI notes via API, pushes them to a central cloud DB, and provides a UI for browsing and tagging.",
+      "why_now": "Rapid adoption of AI coding tools and lack of native collaboration features create a gap; teams seek efficiency gains.",
+      "monetization": "SaaS subscription per seat (e.g., $15 / user / mo).",
+      "launch_difficulty": "Modéré : nécessite intégration API avec Claude/Codex et UI simple, estimé 6‑8 semaines.",
+      "ai_automation_potential": "Élevé : l’outil automatise la collecte, le classement et la diffusion des notes AI.",
+      "demand_signals": [
+        "“Claude Code keeps notes for itself for every repo… The problem is only Claude on my laptop sees these notes.”"
+      ],
+      "risks": [
+        "Dépendance aux API propriétaires qui peuvent changer",
+        "Problèmes de confidentialité si les notes contiennent du code propriétaire"
+      ],
+      "validation_steps": [
+        "Interviewer 5 dev teams qui utilisent Claude/Codex pour confirmer le problème",
+        "Construire un prototype d’extension Chrome qui exporte les notes vers Google Sheets et mesurer le temps économisé",
+        "Proposer un test gratuit de 30 jours à une équipe et recueillir le NPS"
+      ],
+      "scoring": {
+        "problem_intensity": 14,
+        "observable_demand": 10,
+        "monetization_potential": 13,
+        "market_size_niche": 12,
+        "competition_saturation": 7,
+        "launch_ease": 5,
+        "ai_automation_potential": 9,
+        "total_score": 70,
+        "score_reasoning": "Le problème est clairement identifié et coûte du temps, la demande est observable parmi les équipes AI‑first, le modèle SaaS est solide, le marché des dev teams est grand, la concurrence est limitée, le MVP nécessite une intégration technique modérée, l'IA apporte un fort potentiel d'automatisation."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/startups/comments/1xka6qb/make_my_tools_claude_code_codex_keep_auto/"
+      ],
+      "source_subreddits": [
+        "r/startups"
+      ],
+      "post_ids": [
+        "1xka6qb"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Local‑Business Instagram‑to‑Footfall Tracker",
+      "problem": "Business owners cannot reliably link Instagram activity to actual in‑store customers, making ad spend decisions blind.",
+      "target_customer": "Brick‑and‑mortar retailers, cafés, salons using Instagram for marketing",
+      "opportunity": "Develop a lightweight analytics tool that combines Instagram insights with POS data to attribute foot traffic to specific posts or campaigns.",
+      "proposed_solution": "Web dashboard where owners upload daily sales CSV; the tool matches geo‑insights and timestamps from Instagram to estimate conversion rates.",
+      "why_now": "Instagram remains a primary channel for local brands, yet existing analytics focus on online metrics only.",
+      "monetization": "Monthly subscription tiered by number of locations (e.g., $29 / mo for 1‑3 sites).",
+      "launch_difficulty": "Modéré : besoin d’intégrations API Instagram et import CSV, MVP en 5‑6 semaines.",
+      "ai_automation_potential": "Modéré : IA pour corrélation temporelle et nettoyage des données.",
+      "demand_signals": [
+        "“Most owners only look at follower count, which says almost nothing about whether anyone walks in or books.”",
+        "“How do you actually know if Instagram brings you customers?”"
+      ],
+      "risks": [
+        "Difficulté à obtenir des données de vente fiables de la part des petites entreprises",
+        "Limites d’accès aux insights détaillés d’Instagram pour les comptes non‑business"
+      ],
+      "validation_steps": [
+        "Survey 15 local businesses sur leurs méthodes actuelles de suivi Instagram",
+        "Prototyper un tableau simple avec Google Data Studio et mesurer l’intérêt via un questionnaire",
+        "Offrir un test gratuit de 2 semaines à 3 commerces et comparer les ventes avant/après"
+      ],
+      "scoring": {
+        "problem_intensity": 13,
+        "observable_demand": 12,
+        "monetization_potential": 12,
+        "market_size_niche": 12,
+        "competition_saturation": 6,
+        "launch_ease": 6,
+        "ai_automation_potential": 6,
+        "total_score": 67,
+        "score_reasoning": "Le problème est réel mais moins critique que la perte de leads, la demande est visible, le modèle SaaS est viable, le marché local est important, la concurrence existe (analytics généraux) mais peu ciblée, le MVP est faisable, l’IA apporte une valeur moyenne."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/smallbusiness/comments/1xli4z7/how_do_you_actually_know_if_instagram_brings_you/"
+      ],
+      "source_subreddits": [
+        "r/smallbusiness"
+      ],
+      "post_ids": [
+        "1xli4z7"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Paid Brain‑Pick Sessions Platform",
+      "problem": "Solo consultants and industry experts receive many unsolicited requests for free advice, wasting time and causing frustration.",
+      "target_customer": "Solo consultants, coaches, thought‑leaders with a personal brand",
+      "opportunity": "Create a marketplace where experts can set availability and price for short, focused knowledge‑sharing calls, turning interruptions into revenue.",
+      "proposed_solution": "Web SaaS that lets experts publish time slots, accept paid bookings, and integrate calendar/meeting links; includes a brief intake form to qualify requests.",
+      "why_now": "Growth of personal branding and remote consulting increases demand for expert time, while existing platforms focus on long‑term coaching rather than micro‑advice.",
+      "monetization": "Transaction fee (10 % per booked session) + optional subscription for premium profile features.",
+      "launch_difficulty": "Modéré : MVP avec Stripe, Calendly API et profil simple en 4‑6 semaines.",
+      "ai_automation_potential": "Faible : IA peut aider à filtrer les demandes via texte, mais le cœur reste humain.",
+      "demand_signals": [
+        "“I run a solo consultancy… several people reach out to have coffee for the sole purpose of ‘picking my brain’… I feel a tiny bit annoyed.”"
+      ],
+      "risks": [
+        "Adoption resistance if experts view paid micro‑consulting as de‑valuing their brand",
+        "Regulation around consulting advice in certain industries"
+      ],
+      "validation_steps": [
+        "Contacter 10 consultants similaires et leur proposer de tester la plateforme gratuitement contre feedback",
+        "Créer une landing page avec formulaire d’inscription et mesurer le taux de conversion des visiteurs",
+        "Lancer une campagne LinkedIn ciblée et mesurer le nombre de réservations payées sur un prototype"
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 12,
+        "monetization_potential": 12,
+        "market_size_niche": 10,
+        "competition_saturation": 8,
+        "launch_ease": 6,
+        "ai_automation_potential": 2,
+        "total_score": 66,
+        "score_reasoning": "Le problème est réel et coûte du temps, la demande est visible parmi les consultants, le modèle de paiement est crédible, le marché niche est limité mais suffisant, la concurrence est faible, le MVP est réalisable, l'IA apporte peu de valeur ajoutée."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1x22r5l/how_to_handle_people_reaching_out_to_pick_ny_brain/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1x22r5l"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Talent Tuesday: Services and Collabs | November 03, 2026",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Watched The Odyssey. Shut down my second co‑founded startup the next morning.",
+      "reason": "Post is a personal anecdote without a concrete problem or demand for a solution.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Tai Lopez was charged by the SEC for a 120 million dollar Ponzi scheme and people are STILL going to see him speak. WHY?",
+      "reason": "Rant‑style content focusing on a public figure; no entrepreneurial pain point to address.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "5 Ways to Become Industry Famous",
+      "reason": "Promotional listicle offering advice, not a user‑expressed frustration needing a product solution.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
