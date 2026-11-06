@@ -1,0 +1,204 @@
+{
+  "date": "2026-11-06",
+  "generated_at": "2026-11-06T12:49:54.070814Z",
+  "posts_scraped_total": 73,
+  "posts_after_filtering": 21,
+  "posts_sent_to_llm": 21,
+  "subreddit_breakdown": {
+    "r/Entrepreneur": 73
+  },
+  "opportunities": [
+    {
+      "title": "Vetted Consultant Matching Platform for Entrepreneurs",
+      "problem": "Entrepreneurs receive quick AI answers but still need trusted human consultants for high‑stakes decisions, lacking a reliable marketplace that guarantees vetting.",
+      "target_customer": "Solo founders and early‑stage startups seeking expert advice",
+      "opportunity": "A marketplace that matches entrepreneurs with pre‑vetted consultants, using AI to surface the best fit and handling contracts/payments.",
+      "proposed_solution": "Web/app platform where users describe their problem, AI suggests top consultants, and the platform manages scheduling, payments, and feedback.",
+      "why_now": "Growth of AI tools creates hybrid demand for human expertise; trust signals are increasingly important.",
+      "monetization": "Commission on each consulting session (15%) plus optional subscription for unlimited matches.",
+      "launch_difficulty": "Modéré : Requires building vetting process and basic matching algorithm; MVP in 5‑7 weeks.",
+      "ai_automation_potential": "AI parses problem descriptions, ranks consultants by relevance, and drafts engagement briefs.",
+      "demand_signals": [
+        "Reddit post 10 (r/Entrepreneur) questioning interest in a platform that connects businesses with vetted human consultants."
+      ],
+      "risks": [
+        "Ensuring consistent consultant quality.",
+        "Competing with established freelance platforms.",
+        "Regulatory considerations for consulting contracts."
+      ],
+      "validation_steps": [
+        "Recruit 10 consultants willing to be vetted and list them on a simple landing page.",
+        "Run a paid pilot with 5 entrepreneurs to solve real problems; collect NPS.",
+        "Measure conversion rate from problem description to booked session (target >30%)."
+      ],
+      "scoring": {
+        "problem_intensity": 15,
+        "observable_demand": 15,
+        "monetization_potential": 14,
+        "market_size_niche": 13,
+        "competition_saturation": 5,
+        "launch_ease": 5,
+        "ai_automation_potential": 8,
+        "total_score": 75,
+        "score_reasoning": "High pain for critical decisions, explicit demand signal, strong monetization via commission, large consulting market, competition exists but niche focus on vetted experts, MVP moderate, AI adds matching efficiency."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1xnrnl6/would_you_use_a_platform_that_connects_your/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1xnrnl6"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "Manufacturing Partner Prep & Matchmaking SaaS",
+      "problem": "Startups feel unprepared for manufacturer meetings, risk being ghosted, and risk committing large sums without confidence in compatibility.",
+      "target_customer": "Early‑stage hardware startups seeking manufacturing partners",
+      "opportunity": "A platform that provides pitch‑deck templates, manufacturer vetting scores, and a matchmaking service to connect startups with vetted manufacturers.",
+      "proposed_solution": "Web SaaS with AI‑generated meeting decks, a searchable database of vetted manufacturers, and a workflow to track outreach and contracts.",
+      "why_now": "Rise of on‑demand manufacturing services and AI tools for document generation makes low‑cost, high‑quality prep feasible.",
+      "monetization": "Tiered subscription (e.g., $49/mo for basic access, $199/mo for premium matchmaking and analytics).",
+      "launch_difficulty": "Modéré : MVP can be built with no‑code tools for the database and deck templates in 4‑6 weeks.",
+      "ai_automation_potential": "AI can auto‑generate customized pitch decks, score manufacturers based on past performance, and suggest negotiation points.",
+      "demand_signals": [
+        "Reddit post 3 (r/Entrepreneur) describing feeling unprepared and getting ghosted after manufacturer meetings."
+      ],
+      "risks": [
+        "Need to maintain up‑to‑date manufacturer data.",
+        "Potential legal liability if a match fails.",
+        "Competition from existing sourcing platforms."
+      ],
+      "validation_steps": [
+        "Interview 10 hardware founders about their manufacturer‑search pain points.",
+        "Create a landing page with a sign‑up form for early access and measure interest (target 100 sign‑ups).",
+        "Run a manual matchmaking pilot with 5 startups and 5 manufacturers to collect feedback."
+      ],
+      "scoring": {
+        "problem_intensity": 18,
+        "observable_demand": 12,
+        "monetization_potential": 12,
+        "market_size_niche": 10,
+        "competition_saturation": 6,
+        "launch_ease": 7,
+        "ai_automation_potential": 8,
+        "total_score": 73,
+        "score_reasoning": "Strong pain (large financial risk) and clear demand signal, decent monetization via subscription, moderate market size, some competition but niche focus, MVP feasible, AI adds clear efficiency."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1xnb36o/how_to_be_taken_seriously_as_a_start_up_meeting/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1xnb36o"
+      ],
+      "signal_count": 1
+    },
+    {
+      "title": "High‑Performance Manager Onboarding & Coaching Platform",
+      "problem": "Leaders struggle to develop new managers without disrupting existing high‑performing teams, lacking structured coaching and performance tracking.",
+      "target_customer": "SMBs and scale‑ups with teams of 20‑200 employees",
+      "opportunity": "A SaaS tool that provides onboarding roadmaps, coaching templates, and real‑time performance dashboards for new managers.",
+      "proposed_solution": "Web app with AI‑driven coaching suggestions, milestone tracking, and peer feedback loops.",
+      "why_now": "Increased focus on people‑first culture and availability of AI for personalized learning paths.",
+      "monetization": "Per‑manager subscription ($30/mo) with enterprise tier for unlimited managers.",
+      "launch_difficulty": "Modéré : Requires content creation and basic analytics; can launch MVP in 6‑8 weeks using low‑code.",
+      "ai_automation_potential": "AI can generate personalized development plans and flag performance risks.",
+      "demand_signals": [
+        "Reddit post 7 (r/Entrepreneur) asking how to develop new managers without harming team performance."
+      ],
+      "risks": [
+        "Content relevance and adoption by HR teams.",
+        "Competing with established HR platforms.",
+        "Ensuring data privacy for performance metrics."
+      ],
+      "validation_steps": [
+        "Survey 15 companies about current manager onboarding challenges.",
+        "Build a prototype onboarding checklist and test with 3 new managers.",
+        "Create a pre‑launch landing page offering early‑bird pricing; aim for 50 sign‑ups."
+      ],
+      "scoring": {
+        "problem_intensity": 16,
+        "observable_demand": 14,
+        "monetization_potential": 13,
+        "market_size_niche": 12,
+        "competition_saturation": 5,
+        "launch_ease": 6,
+        "ai_automation_potential": 7,
+        "total_score": 73,
+        "score_reasoning": "Clear pain for growing teams, observable demand, solid B2B subscription model, sizable HR tech market, moderate competition, MVP doable, AI adds value."
+      },
+      "source_urls": [
+        "https://www.reddit.com/r/Entrepreneur/comments/1xlvq4m/how_do_you_develop_new_managers_without/"
+      ],
+      "source_subreddits": [
+        "r/Entrepreneur"
+      ],
+      "post_ids": [
+        "1xlvq4m"
+      ],
+      "signal_count": 1
+    }
+  ],
+  "rejected_ideas": [
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Publication sans titre",
+      "reason": "Signal entrepreneurial trop faible ou discussion trop générale",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Feeling trapped in a massive corporation",
+      "reason": "Expresses personal frustration without a concrete, actionable problem that can be solved with a product or service.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "Lost drive despite good income (YouTube creator)",
+      "reason": "Focuses on personal motivation and mindset; no clear market need for a tool or service.",
+      "category": "Pas de problème actionnable"
+    },
+    {
+      "title_or_topic": "General discussion about AI hype (\"I love AI\")",
+      "reason": "Broad enthusiasm without a specific pain point or demand for a solution.",
+      "category": "Pas de problème actionnable"
+    }
+  ]
+}
